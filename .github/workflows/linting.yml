@@ -1,0 +1,19 @@
+name: CI
+
+on: [push, pull_request]
+
+jobs:
+  Build:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+
+    steps:
+    - name: Check-out code
+      uses: actions/checkout@v1
+
+    - name: Install deps
+      run: npm install
+    
+    - name: Check linting
+      run: npm run lint
