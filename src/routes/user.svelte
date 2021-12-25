@@ -1,7 +1,7 @@
 <script>
-    import { onMount } from "svelte";
+	import { onMount } from 'svelte';
 
-    onMount(()=> {
-        window.location.href = "/";
-    })
+	onMount(() => {
+		window.location.href = '/';
+	});
 </script>
