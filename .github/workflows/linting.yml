@@ -9,11 +9,11 @@ jobs:
       fail-fast: false
 
     steps:
-    - name: Check-out code
-      uses: actions/checkout@v1
+      - name: Check-out code
+        uses: actions/checkout@v1
 
-    - name: Install deps
-      run: npm install
-    
-    - name: Check linting
-      run: npm run lint
+      - name: Install deps
+        run: npm install
+
+      - name: Check linting
+        run: npm run lint
