@@ -43,7 +43,11 @@ We highly appreciate all kinds of contributions to Berry.
 
 #### Moderate
 
+- The userMenu encounters a bug when you click too fast
+
 #### Low
+
+- The website isn't responsive (index.svelte -> main element, the rest seems to work fine.)
 
 ###### Made and maintained with ❤ by PurotoApp and its community.
 
