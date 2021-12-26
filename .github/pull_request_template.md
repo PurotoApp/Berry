@@ -1,6 +1,6 @@
-<--
+<!--
 Thank you for contributing to Berry! Please fill in this small template to help us get this merged as quickly as possible.
---!>
+-->
 
 **What I did:**
 
