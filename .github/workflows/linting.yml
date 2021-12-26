@@ -1,9 +1,13 @@
 name: linting
 
-on: [push, pull_request]
+on:
+  push:
+    branches: [master]
+  pull_request:
+    branches: [master]
 
 jobs:
-  Build:
+  linting:
     runs-on: ubuntu-latest
     strategy:
       fail-fast: false
