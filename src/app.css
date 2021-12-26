@@ -1,5 +1,5 @@
 :root {
-	@apply bg-background text-white border-red;
+	@apply bg-background text-white;
 }
 
 #root {
@@ -11,8 +11,9 @@
 #background {
 	width: 100vw;
 	height: 50vh;
-	position: static;
-	transform: translate(0, 50vh);
+	position: fixed;
+	transform: translateY(50vh);
+	mask-image: -webkit-gradient(left top, left bottom, from(rgba(0, 0, 0, 0)), to(#2a2830));
 	-webkit-mask-image: -webkit-gradient(
 		linear,
 		left top,
@@ -27,6 +28,10 @@
 	height: 100%;
 	background-image: url('/dot.svg');
 	background-size: 1.5rem;
+}
+
+#userMenu {
+	transition: opacity 500ms;
 }
 
 @screen lg {
