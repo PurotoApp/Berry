@@ -14,8 +14,6 @@
 			userMenu.classList.remove('opacity-100');
 			userMenu.classList.add('opacity-0');
 			setTimeout(() => userMenu.classList.add('hidden'), 500);
-
-
 		} // If the menu is hidden, it will show it
 		else if (userMenu.classList.contains('opacity-0')) {
 			userMenu.classList.remove('hidden');
@@ -33,7 +31,6 @@
 
 <header class="fixed w-full mt-6 top-[0]">
 	<div class="relative flex flex-nowrap justify-between w-10/12 mx-auto">
-
 		<!--    Puroto Icon     -->
 		<button
 			class="focus:outline-1 focus:border-white w-[36px] h-[36px]"
@@ -54,8 +51,6 @@
 			</svg>
 		</button>
 
-
-
 		<!--	User	-->
 		<button class="rounded-full bg-gray-5 w-[36px] h-[36px]" on:click={toggleUserHeader}>
 			{#if user.isLogOn}
@@ -64,25 +59,24 @@
 					style="background-image: url('{user.avatar}');"
 				/>
 			{/if}
-			</button>
-			<div
-				id="userMenu"
-				class="opacity-0 hidden absolute mt-2 min-w-[12rem] max-w-[16rem] md:min-w-[6rem] md:max-w-[12rem] bg-gray-4 rounded-lg text-center font-medium px-2 py-2 mx-auto left-[50%] top-[90%]"
-				style="transform: translateX(-50%);"
-			>
-	
-				{#if !user.isLogOn}
-					<div class="block py-2 hover:bg-gray-5">
-						<div class="bg-[url('./icon.svg')]" />
-						<a href="/signin">Sign in</a>
-					</div>
-					<div class="block py-2 hover:bg-gray-5">
-						<div class="bg-[url('./icon.svg')]" />
-						<a href="/signup">Sign up</a>
-					</div>
-				{/if}
-	
-				{#if user.isLogOn}
+		</button>
+		<div
+			id="userMenu"
+			class="opacity-0 hidden absolute mt-2 min-w-[12rem] max-w-[16rem] md:min-w-[6rem] md:max-w-[12rem] bg-gray-4 rounded-lg text-center font-medium px-2 py-2 mx-auto left-[50%] top-[90%]"
+			style="transform: translateX(-50%);"
+		>
+			{#if !user.isLogOn}
+				<div class="block py-2 hover:bg-gray-5">
+					<div class="bg-[url('./icon.svg')]" />
+					<a href="/signin">Sign in</a>
+				</div>
+				<div class="block py-2 hover:bg-gray-5">
+					<div class="bg-[url('./icon.svg')]" />
+					<a href="/signup">Sign up</a>
+				</div>
+			{/if}
+
+			{#if user.isLogOn}
 				<div class="block py-2 hover:bg-gray-5">
 					<div class="bg-[url('./icon.svg')]" />
 					<a href="/signin">Your profile</a>
@@ -96,7 +90,7 @@
 					<a href="/signup">Settings</a>
 				</div>
 			{/if}
-			</div>
+		</div>
 
 		<!--    Notification Icon     -->
 		<div on:click={toggleNotificationHeader}>
