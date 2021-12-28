@@ -1,15 +1,20 @@
-# Berry
+<p align="center">
+  <img src=".github/media/berry.svg" alt="Readme logo"/>
+</p>
 
-Berry is a web application that allows people to interact with the PurotoApp API. It is the front-end of Puroto.
+[![CodeQL](https://github.com/PurotoApp/Berry/actions/workflows/codeql-analysis.yml/badge.svg)](https://github.com/PurotoApp/Berry/actions/workflows/codeql-analysis.yml)
+[![linting](https://github.com/PurotoApp/Berry/actions/workflows/linting.yml/badge.svg)](https://github.com/PurotoApp/Berry/actions/workflows/linting.yml)
 
-[Discord](https://discord.puroto.net/)
-[Twitter](https://twitter.com/PurotoApp)
+[![Discord](https://img.shields.io/badge/Discord-7289DA?style=for-the-badge&logo=discord&logoColor=white)](https://discord.puroto.net/)
+[![Twitter](https://img.shields.io/badge/Twitter-1DA1F2?style=for-the-badge&logo=twitter&logoColor=white)](https://twitter.com/PurotoApp)
+
+Berry is a progressive web application that allows you to interact with [cascade](https://github.com/PurotoApp/cascade), the PurotoApp API. This is the front-end of [Puroto](https://puroto.net).
 
 ## Contributing
 
-We highly appreciate all kinds of contributions to Berry.
+We highly appreciate all kinds of contributions to Berry. For learning more about contributing to berry in an open source matter, please see our [contribution guidelines](https://github.com/PurotoApp/Berry/blob/master/.github/CONTRIBUTING.md) for more informations.
 
-## To contribute:
+## Building berry locally
 
 ### Prerequisites
 
@@ -33,21 +38,7 @@ We highly appreciate all kinds of contributions to Berry.
    npm run dev
    ```
 
-## Known issues:
-
-### Severity
-
-#### Critical
-
-- A11Y: [The background dots aren't in the actual background](https://alexou.s-ul.eu/rFbdDWD3.png)
-
-#### Moderate
-
-- The userMenu encounters a bug when you click too fast
-
-#### Low
-
-- The website isn't responsive (index.svelte -> main element, the rest seems to work fine.)
+---
 
 ###### Made and maintained with ❤ by PurotoApp and its community.
 
