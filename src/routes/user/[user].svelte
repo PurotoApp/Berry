@@ -15,11 +15,6 @@
 	}, 2500);
 </script>
 
-<svelte:head>
-	<title>Puroto - {user}</title>
-</svelte:head>
-
-<Header />
 <main>
 	<h1 class="text-2xl text-purple md:text-red">{user}</h1>
 </main>
