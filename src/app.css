@@ -30,10 +30,6 @@
 	background-size: 1.5rem;
 }
 
-#userMenu {
-	transition: opacity 500ms;
-}
-
 @screen lg {
 	#shtrprld__landing_content_start {
 		width: 512px;

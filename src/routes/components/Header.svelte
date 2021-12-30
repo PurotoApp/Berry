@@ -1,39 +1,38 @@
 <script>
+	import Post from './Post.svelte';
+
 	export let user = {
 		isLogOn: false,
 		avatar: null,
+		name: 'user',
+		username: 'username',
 		hasNotification: false,
-		name: 'user'
+		notifications: [
+			{
+				avatar: null,
+				name: null,
+				username: null,
+				content: null
+			}
+		]
 	};
 
 	function toggleUserHeader() {
 		let userMenu = document.getElementById('userMenu');
-
-		// If the menu is already shown, it will remove it
-		if (userMenu.classList.contains('opacity-100')) {
-			userMenu.classList.remove('opacity-100');
-			userMenu.classList.add('opacity-0');
-			setTimeout(() => userMenu.classList.add('hidden'), 500);
-		} // If the menu is hidden, it will show it
-		else if (userMenu.classList.contains('opacity-0')) {
-			userMenu.classList.remove('hidden');
-			setTimeout(() => {
-				userMenu.classList.remove('opacity-0');
-				userMenu.classList.add('opacity-100');
-			}, 1);
-		}
+		userMenu.classList.toggle('hidden');
 	}
 
 	function toggleNotificationHeader() {
-		// TODO
+		let notifMenu = document.getElementById('notifMenu');
+		notifMenu.classList.toggle('hidden');
 	}
 </script>
 
 <header class="fixed w-full mt-6 top-[0]">
 	<div class="relative flex flex-nowrap justify-between w-10/12 mx-auto">
 		<!--    Puroto Icon     -->
-		<button
-			class="focus:outline-1 focus:border-white w-[36px] h-[36px]"
+		<div
+			class="focus:outline-1 focus:border-white w-[36px] h-[36px] cursor-pointer"
 			onclick="window.location.href='/'"
 		>
 			<svg
@@ -49,20 +48,23 @@
 					stroke-width="128"
 				/>
 			</svg>
-		</button>
+		</div>
 
 		<!--	User	-->
-		<button class="rounded-full bg-gray-5 w-[36px] h-[36px]" on:click={toggleUserHeader}>
+		<div
+			class="rounded-full bg-gray-5 w-[36px] h-[36px] cursor-pointer"
+			on:click={toggleUserHeader}
+		>
 			{#if user.isLogOn}
 				<div
 					class="bg-contain rounded-full h-full w-full pointer-events-none"
-					style="background-image: url('{user.avatar}');"
+					style="background-image: url('{user.avatar}')"
 				/>
 			{/if}
-		</button>
+		</div>
 		<div
 			id="userMenu"
-			class="opacity-0 hidden absolute mt-2 min-w-[12rem] max-w-[16rem] md:min-w-[6rem] md:max-w-[12rem] bg-gray-4 rounded-lg text-center font-medium px-2 py-2 mx-auto left-[50%] top-[90%]"
+			class="hidden absolute mt-2 min-w-[12rem] max-w-[16rem] md:min-w-[6rem] md:max-w-[12rem] bg-gray-4 rounded-lg text-center font-medium px-2 py-2 mx-auto left-[50%] top-[90%] select-none"
 			style="transform: translateX(-50%);"
 		>
 			{#if !user.isLogOn}
@@ -79,15 +81,15 @@
 			{#if user.isLogOn}
 				<div class="block py-2 hover:bg-gray-5">
 					<div class="bg-[url('./icon.svg')]" />
-					<a href="/signin">Your profile</a>
+					<a href="/user/{user.username}">Your profile</a>
 				</div>
 				<div class="block py-2 hover:bg-gray-5">
 					<div class="bg-[url('./icon.svg')]" />
-					<a href="/signup">Messages</a>
+					<a href="/messages">Messages</a>
 				</div>
 				<div class="block py-2 hover:bg-gray-5">
 					<div class="bg-[url('./icon.svg')]" />
-					<a href="/signup">Settings</a>
+					<a href="/settings">Settings</a>
 				</div>
 			{/if}
 		</div>
@@ -110,6 +112,23 @@
 					d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"
 				/>
 			</svg>
+
+			<div
+				id="notifMenu"
+				class="hidden absolute mt-2 w-[16rem] md:w-[16rem] bg-gray-2 rounded-lg text-center font-medium px-2 py-2 mx-auto md:left-[80%] top-[90%] select-none"
+			>
+				{#if user.hasNotification}
+					{#each user.notifications as notification}
+						<Post type="small" {...notification} />
+					{/each}
+				{/if}
+
+				{#if !user.hasNotification}
+					<div class="block py-2 hover:bg-gray-5">
+						<span>You don't have any notification.</span>
+					</div>
+				{/if}
+			</div>
 
 			{#if user.hasNotification}
 				<div
