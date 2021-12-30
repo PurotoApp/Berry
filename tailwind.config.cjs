@@ -32,7 +32,10 @@ module.exports = {
 
 			purple: '#6D6BED',
 
-			red: '#F14646'
+			red: {
+				1: '#E24848',
+				2: '#F14646'
+			}
 		}
 	}
 };
