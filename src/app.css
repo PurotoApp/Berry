@@ -8,28 +8,6 @@
 	height: 100%;
 }
 
-#background {
-	width: 100vw;
-	height: 50vh;
-	position: fixed;
-	transform: translateY(50vh);
-	mask-image: -webkit-gradient(left top, left bottom, from(rgba(0, 0, 0, 0)), to(#2a2830));
-	-webkit-mask-image: -webkit-gradient(
-		linear,
-		left top,
-		left bottom,
-		from(rgba(0, 0, 0, 0)),
-		to(#2a2830)
-	);
-}
-
-#dots {
-	width: 100%;
-	height: 100%;
-	background-image: url('/dot.svg');
-	background-size: 1.5rem;
-}
-
 @screen lg {
 	#shtrprld__landing_content_start {
 		width: 512px;
