@@ -6,8 +6,6 @@
 </script>
 
 <script>
-	import Header from '../components/Header.svelte';
-
 	export let user;
 
 	setTimeout(() => {
