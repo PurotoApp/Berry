@@ -10,6 +10,6 @@
 	<title>Puroto - {title}</title>
 </svelte:head>
 
-<Header />
-
 <slot />
+
+<Header />
