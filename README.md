@@ -42,4 +42,4 @@ We highly appreciate all kinds of contributions to Berry. For learning more abou
 
 ###### Made and maintained with ❤ by PurotoApp and its community.
 
-###### Copyright (c) 2021 PurotoApp under the GPLv3 license.
+###### Copyright (c) 2022 PurotoApp under the GPLv3 license.
