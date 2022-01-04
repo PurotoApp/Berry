@@ -1,48 +1,48 @@
 version: 2
 updates:
   # Maintain dependencies for GitHub Actions
-  - package-ecosystem: "github-actions"
-    directory: "/"
+  - package-ecosystem: 'github-actions'
+    directory: '/'
     schedule:
-      interval: "daily"
-      time: "06:00"
-      timezone: "Europe/Berlin"
+      interval: 'daily'
+      time: '06:00'
+      timezone: 'Europe/Berlin'
     open-pull-requests-limit: 99
     reviewers:
-      - "mcwertgaming"
-      - "Alekuso"
+      - 'mcwertgaming'
+      - 'Alekuso'
     assignees:
-      - "mcwertgaming"
-      - "Alekuso"
+      - 'mcwertgaming'
+      - 'Alekuso'
 
   # Maintain dependencies for docker
-  - package-ecosystem: "docker"
-    directory: "/"
+  - package-ecosystem: 'docker'
+    directory: '/'
     schedule:
-      interval: "weekly"
+      interval: 'weekly'
       day: sunday
-      time: "06:00"
-      timezone: "Europe/Berlin"
+      time: '06:00'
+      timezone: 'Europe/Berlin'
     open-pull-requests-limit: 99
     reviewers:
-      - "mcwertgaming"
-      - "Alekuso"
+      - 'mcwertgaming'
+      - 'Alekuso'
     assignees:
-      - "mcwertgaming"
-      - "Alekuso"
+      - 'mcwertgaming'
+      - 'Alekuso'
 
   # Maintain dependencies for npm
-  - package-ecosystem: "npm"
-    directory: "/"
+  - package-ecosystem: 'npm'
+    directory: '/'
     schedule:
-      interval: "weekly"
+      interval: 'weekly'
       day: sunday
-      time: "06:00"
-      timezone: "Europe/Berlin"
+      time: '06:00'
+      timezone: 'Europe/Berlin'
     open-pull-requests-limit: 99
     reviewers:
-      - "mcwertgaming"
-      - "Alekuso"
+      - 'mcwertgaming'
+      - 'Alekuso'
     assignees:
-      - "mcwertgaming"
-      - "Alekuso"
+      - 'mcwertgaming'
+      - 'Alekuso'
