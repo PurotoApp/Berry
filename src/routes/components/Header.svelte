@@ -7,8 +7,7 @@
 		name: 'user',
 		username: 'username',
 		hasNotification: false,
-		notifications: [
-		]
+		notifications: []
 	};
 
 	function toggleUserHeader() {
