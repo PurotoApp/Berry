@@ -10,8 +10,7 @@ module.exports = {
 			'2xl': '1560px'
 		},
 		fontFamily: {
-			sans: 'Inter',
-			mono: 'monospace'
+			sans: 'Inter, "Public Sans", Helvetica, Ubuntu, Arial, sans-serif'
 		},
 		colors: {
 			transparent: 'transparent',
