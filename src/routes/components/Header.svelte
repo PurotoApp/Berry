@@ -8,12 +8,6 @@
 		username: 'username',
 		hasNotification: false,
 		notifications: [
-			{
-				avatar: null,
-				name: null,
-				username: null,
-				content: null
-			}
 		]
 	};
 
@@ -112,7 +106,7 @@
 			</svg>
 			<div
 				id="notifMenu"
-				class="hidden absolute mt-2 w-[16rem] md:w-[16rem] bg-gray-2 rounded-lg text-center font-medium px-2 py-2 mx-auto md:left-[80%] top-[90%] select-none"
+				class="hidden absolute mt-2 w-[16rem] md:w-[24rem] md:max-h-[24rem] bg-gray-2 rounded-lg text-center font-medium px-2 py-2 mx-auto top-[90%] translate-x-[-88%] md:translate-x-[-92%] overflow-y-auto select-none"
 			>
 				{#if user.hasNotification}
 					{#each user.notifications as notification}
