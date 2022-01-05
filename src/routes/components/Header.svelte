@@ -7,14 +7,7 @@
 		name: 'user',
 		username: 'username',
 		hasNotification: false,
-		notifications: [
-			{
-				avatar: null,
-				name: null,
-				username: null,
-				content: null
-			}
-		]
+		notifications: []
 	};
 
 	function toggleUserHeader() {
@@ -29,6 +22,7 @@
 </script>
 
 <header class="fixed w-full mt-6 top-[0]">
+	<div class="absolute min-w-full min-h-full bg-background py-12 translate-y-[-50%]" />
 	<div class="relative flex flex-nowrap justify-between w-10/12 mx-auto">
 		<!--    Puroto Icon     -->
 		<div
@@ -49,7 +43,6 @@
 				/>
 			</svg>
 		</div>
-
 		<!--	User	-->
 		<div
 			class="rounded-full bg-gray-5 w-[36px] h-[36px] cursor-pointer"
@@ -77,7 +70,6 @@
 					<a href="/signup">Sign up</a>
 				</div>
 			{/if}
-
 			{#if user.isLogOn}
 				<div class="block py-2 hover:bg-gray-5">
 					<div class="bg-[url('./icon.svg')]" />
@@ -93,7 +85,6 @@
 				</div>
 			{/if}
 		</div>
-
 		<!--    Notification Icon     -->
 		<div on:click={toggleNotificationHeader}>
 			<svg
@@ -112,30 +103,26 @@
 					d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"
 				/>
 			</svg>
-
 			<div
 				id="notifMenu"
-				class="hidden absolute mt-2 w-[16rem] md:w-[16rem] bg-gray-2 rounded-lg text-center font-medium px-2 py-2 mx-auto md:left-[80%] top-[90%] select-none"
+				class="hidden absolute mt-2 w-[16rem] md:w-[24rem] md:max-h-[24rem] bg-gray-2 rounded-lg text-center font-medium px-2 py-2 mx-auto top-[90%] translate-x-[-88%] md:translate-x-[-92%] overflow-y-auto select-none"
 			>
 				{#if user.hasNotification}
 					{#each user.notifications as notification}
 						<Post type="small" {...notification} />
 					{/each}
 				{/if}
-
 				{#if !user.hasNotification}
 					<div class="block py-2 hover:bg-gray-5">
 						<span>You don't have any notification.</span>
 					</div>
 				{/if}
 			</div>
-
 			{#if user.hasNotification}
 				<div
 					class="absolute bg-red-1 rounded-full animate-ping pointer-events-none"
 					style="height: 12px; width: 12px; top: 24px; right: 0;"
 				/>
-
 				<div
 					class="absolute bg-red-2 rounded-full pointer-events-none"
 					style="height: 12px; width: 12px; top: 24px; right: 0;"

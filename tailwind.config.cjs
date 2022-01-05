@@ -10,8 +10,7 @@ module.exports = {
 			'2xl': '1560px'
 		},
 		fontFamily: {
-			sans: 'Inter',
-			mono: 'monospace'
+			sans: 'Inter, "Public Sans", Helvetica, Ubuntu, Arial, sans-serif'
 		},
 		colors: {
 			transparent: 'transparent',
@@ -24,10 +23,15 @@ module.exports = {
 
 			gray: {
 				1: '#2A2830',
-				2: '#3A3743',
-				3: '#4B4757',
-				4: '#585469',
-				5: '#6E6986'
+				2: '#2E2C35',
+				3: '#32303A',
+				4: '#3A3743',
+				5: '#4B4757',
+				6: '#585469',
+				7: '#6E6986',
+				8: '#8A82A4',
+				9: '#A59BC2',
+				10: '#CFC7E4'
 			},
 
 			purple: '#6D6BED',

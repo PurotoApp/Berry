@@ -7,10 +7,6 @@
 
 <script>
 	export let user;
-
-	setTimeout(() => {
-		console.log(user);
-	}, 2500);
 </script>
 
 <main>
