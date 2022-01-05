@@ -1,9 +1,0 @@
-:root {
-	@apply bg-background text-white;
-}
-
-#root {
-	position: absolute;
-	width: 100%;
-	height: 100%;
-}
