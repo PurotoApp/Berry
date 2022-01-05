@@ -1,37 +1,27 @@
 <script>
-	import Post from './Post.svelte';
-
 	export let user = {
-		isLogOn: false,
+		isLogOn: true,
 		avatar: null,
 		name: 'user',
 		username: 'username',
-		hasNotification: false,
-		notifications: []
+		hasUnreadNotification: true,
+		hasUnreadMessage: true
 	};
-
-	function toggleUserHeader() {
-		let userMenu = document.getElementById('userMenu');
-		userMenu.classList.toggle('hidden');
-	}
-
-	function toggleNotificationHeader() {
-		let notifMenu = document.getElementById('notifMenu');
-		notifMenu.classList.toggle('hidden');
-	}
 </script>
 
-<header class="fixed w-full mt-6 top-[0]">
-	<div class="absolute min-w-full min-h-full bg-background py-12 translate-y-[-50%]" />
+<header class="fixed min-w-[16rem] w-full mb:bottom-0 md:mt-6 md:top-0">
+	<div
+		class="absolute w-full min-h-full bg-gray-1 md:bg-background py-12 translate-y-[-15%] md:translate-y-[-50%]"
+	/>
 	<div class="relative flex flex-nowrap justify-between w-10/12 mx-auto">
 		<!--    Puroto Icon     -->
 		<div
-			class="focus:outline-1 focus:border-white w-[36px] h-[36px] cursor-pointer"
+			class="focus:outline-1 focus:border-white w-[32px] h-[32px] cursor-pointer"
 			onclick="window.location.href='/'"
 		>
 			<svg
-				width="36"
-				height="36"
+				width="32"
+				height="32"
 				viewBox="0 0 1426 1406"
 				fill="none"
 				xmlns="http://www.w3.org/2000/svg"
@@ -43,55 +33,93 @@
 				/>
 			</svg>
 		</div>
+
+		<!--	Messages Inbox Icon		-->
+		{#if user.isLogOn}
+			<a href="/messages" class="cursor-pointer">
+				<svg
+					xmlns="http://www.w3.org/2000/svg"
+					height="32"
+					width="32"
+					fill="none"
+					viewBox="0 0 24 24"
+					stroke="currentColor"
+				>
+					<path
+						stroke-linecap="round"
+						stroke-linejoin="round"
+						stroke-width="2"
+						d="M17 8h2a2 2 0 012 2v6a2 2 0 01-2 2h-2v4l-4-4H9a1.994 1.994 0 01-1.414-.586m0 0L11 14h4a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2v4l.586-.586z"
+					/>
+				</svg>
+				{#if user.hasUnreadMessage}
+					<div
+						class="text-xs h-[12px] w-[12px] rounded-full bg-red-2 -translate-y-3 translate-x-6 pointer-events-none"
+					>
+						<div class="text-xs h-full w-full rounded-full bg-red-1 animate-ping" />
+					</div>
+				{/if}
+			</a>
+		{/if}
+
 		<!--	User	-->
-		<div
-			class="rounded-full bg-gray-5 w-[36px] h-[36px] cursor-pointer"
-			on:click={toggleUserHeader}
-		>
-			{#if user.isLogOn}
+		{#if user.isLogOn}
+			<a
+				href="/user/{user.username}"
+				class="rounded-full bg-gray-5 w-[32px] h-[32px] cursor-pointer"
+			>
 				<div
 					class="bg-contain rounded-full h-full w-full pointer-events-none"
 					style="background-image: url('{user.avatar}')"
 				/>
-			{/if}
-		</div>
-		<div
-			id="userMenu"
-			class="hidden absolute mt-2 min-w-[12rem] max-w-[16rem] md:min-w-[6rem] md:max-w-[12rem] bg-gray-4 rounded-lg text-center font-medium px-2 py-2 mx-auto left-[50%] top-[90%] select-none"
-			style="transform: translateX(-50%);"
-		>
-			{#if !user.isLogOn}
-				<div class="block py-2 hover:bg-gray-5">
-					<div class="bg-[url('./icon.svg')]" />
-					<a href="/signin">Sign in</a>
-				</div>
-				<div class="block py-2 hover:bg-gray-5">
-					<div class="bg-[url('./icon.svg')]" />
-					<a href="/signup">Sign up</a>
-				</div>
-			{/if}
-			{#if user.isLogOn}
-				<div class="block py-2 hover:bg-gray-5">
-					<div class="bg-[url('./icon.svg')]" />
-					<a href="/user/{user.username}">Your profile</a>
-				</div>
-				<div class="block py-2 hover:bg-gray-5">
-					<div class="bg-[url('./icon.svg')]" />
-					<a href="/messages">Messages</a>
-				</div>
-				<div class="block py-2 hover:bg-gray-5">
-					<div class="bg-[url('./icon.svg')]" />
-					<a href="/settings">Settings</a>
-				</div>
-			{/if}
-		</div>
+			</a>
+		{/if}
+
+		{#if !user.isLogOn}
+			<a href="/new" class="rounded-full bg-gray-5 w-[32px] h-[32px] cursor-pointer" />
+		{/if}
+		<!--	Search Icon     -->
+		<!--
+		<a href="/search" class="cursor-pointer">
+			<svg xmlns="http://www.w3.org/2000/svg" height="32" width="32"fill="none" viewBox="0 0 24 24" stroke="currentColor">
+				<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+			</svg>
+		</a>
+	-->
 		<!--    Notification Icon     -->
-		<div on:click={toggleNotificationHeader}>
+		{#if user.isLogOn}
+			<a href="notification" class="cursor-pointer">
+				<svg
+					width="32"
+					height="32"
+					xmlns="http://www.w3.org/2000/svg"
+					fill="none"
+					viewBox="0 0 24 24"
+					stroke="currentColor"
+				>
+					<path
+						stroke-linecap="round"
+						stroke-linejoin="round"
+						stroke-width="2"
+						d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"
+					/>
+				</svg>
+				{#if user.hasUnreadNotification}
+					<div
+						class="text-xs h-[12px] w-[12px] rounded-full bg-red-2 -translate-y-3 translate-x-6 pointer-events-none"
+					>
+						<div class="text-xs h-full w-full rounded-full bg-red-1 animate-ping" />
+					</div>
+				{/if}
+			</a>
+		{/if}
+
+		<!--    Settings Icon     -->
+		<a href="/settings" class="cursor-pointer">
 			<svg
-				width="36"
-				height="36"
-				class="cursor-pointer"
 				xmlns="http://www.w3.org/2000/svg"
+				width="32"
+				height="32"
 				fill="none"
 				viewBox="0 0 24 24"
 				stroke="currentColor"
@@ -100,34 +128,15 @@
 					stroke-linecap="round"
 					stroke-linejoin="round"
 					stroke-width="2"
-					d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"
+					d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"
+				/>
+				<path
+					stroke-linecap="round"
+					stroke-linejoin="round"
+					stroke-width="2"
+					d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"
 				/>
 			</svg>
-			<div
-				id="notifMenu"
-				class="hidden absolute mt-2 w-[16rem] md:w-[24rem] md:max-h-[24rem] bg-gray-2 rounded-lg text-center font-medium px-2 py-2 mx-auto top-[90%] translate-x-[-88%] md:translate-x-[-92%] overflow-y-auto select-none"
-			>
-				{#if user.hasNotification}
-					{#each user.notifications as notification}
-						<Post type="small" {...notification} />
-					{/each}
-				{/if}
-				{#if !user.hasNotification}
-					<div class="block py-2 hover:bg-gray-5">
-						<span>You don't have any notification.</span>
-					</div>
-				{/if}
-			</div>
-			{#if user.hasNotification}
-				<div
-					class="absolute bg-red-1 rounded-full animate-ping pointer-events-none"
-					style="height: 12px; width: 12px; top: 24px; right: 0;"
-				/>
-				<div
-					class="absolute bg-red-2 rounded-full pointer-events-none"
-					style="height: 12px; width: 12px; top: 24px; right: 0;"
-				/>
-			{/if}
-		</div>
+		</a>
 	</div>
 </header>

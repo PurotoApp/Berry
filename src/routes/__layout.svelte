@@ -1,15 +1,10 @@
 <script>
-	import '../app.css';
-	import '../tailwind.css';
+	import '../global.css';
 	import Header from './components/Header.svelte';
-
-	let title = 'Home';
 </script>
 
-<svelte:head>
-	<title>Puroto - {title}</title>
-</svelte:head>
-
-<slot />
+<main class="absolute min-w-max w-full top-[5em] md:top-[5rem]">
+	<slot />
+</main>
 
 <Header />
