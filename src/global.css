@@ -31,4 +31,14 @@
 	.mb\:bottom-0 {
 		bottom: 0px;
 	}
+
+	.mb-hidden {
+		display: none;
+	}
+}
+
+@media (min-width: 768px) {
+	.desk-hidden {
+		display: none;
+	}
 }

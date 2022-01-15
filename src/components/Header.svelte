@@ -30,7 +30,9 @@
 		</div>
 
 		<!--    Search Bar     -->
-		<SearchBar />
+		<div class="mb-hidden">
+			<SearchBar />
+		</div>
 
 		<!--	Right Part    -->
 		<div class="w-20 h-8 -ml-12 flex justify-between">
