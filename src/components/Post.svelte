@@ -49,14 +49,14 @@
 
 <div class="grid w-full pt-1 mb-12 rounded-lg cursor-pointer hover:bg-gray-1 transition">
 	<div>
-		<a href="/user/{username}" class="w-[42px] h-[42px] select-none"
+		<a href="/user/{username}" class="w-10 h-10 select-none"
 			><div
-				class="inline-block rounded-full bg-contain bg-gray-5 w-[42px] h-[42px] cursor-pointer"
+				class="inline-block rounded-full bg-contain bg-gray-5 w-10 h-10 cursor-pointer"
 				style="background-image: url('{avatar}')"
 			/></a
 		>
 		<div class="inline-block ml-2 select-none">
-			<div class="block translate-y-[30%]">
+			<div class="block translate-y-1/4">
 				<a href="/user/{username}"
 					><span class="font-semibold hover:underline cursor-pointer">{name}</span><span
 						class="text-base ml-2 text-gray-5">@{username}</span
@@ -66,14 +66,14 @@
 			<span class="text-sm select-none text-gray-5">{date}</span>
 		</div>
 	</div>
-	<div class="bg-gray-4 rounded-lg min-h-[32px] pb-2">
+	<div class="bg-gray-4 rounded-lg min-h-8 pb-2">
 		<div class="mx-4 my-4">
 			<span>{content}</span>
 			{#if media.hasMedia}
 				{#if media.type == 'image'}
 					<img
 						src={media.url}
-						class="select-none object-cover mt-2 mb-6 w-full min-h-[64px] max-h-[32rem] rounded-sm"
+						class="select-none object-cover mt-2 mb-6 w-full min-h-16 max-h-[32rem] rounded-sm"
 						loading="lazy"
 						alt="Post media"
 					/>
@@ -81,7 +81,7 @@
 			{/if}
 		</div>
 		<div
-			class="absolute h-[2rem] w-1/6 flex flex-nowrap flex-row-reverse justify-between right-[15px] translate-y-[-1.25rem]"
+			class="absolute h-8 w-1/6 flex flex-nowrap flex-row-reverse justify-between right-4 -translate-y-5"
 		>
 			<!--	Like		-->
 			<div class="w-6 h-6">
@@ -104,7 +104,7 @@
 			<div class="w-6 h-6">
 				<svg
 					xmlns="http://www.w3.org/2000/svg"
-					class="hover:stroke-[#8F8EF1] transition"
+					class="hover:stroke-blue-8 transition"
 					fill="none"
 					viewBox="0 0 24 24"
 					stroke="currentColor"

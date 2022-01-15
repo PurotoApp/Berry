@@ -18,7 +18,7 @@
 	<label for="searchArea">
 		<svg
 			xmlns="http://www.w3.org/2000/svg"
-			class="inline translate-y-[0.15rem] translate-x-1"
+			class="inline translate-y-0.5 translate-x-1"
 			height="24"
 			width="24"
 			fill="none"
@@ -37,6 +37,6 @@
 		id="searchArea"
 		type="text"
 		autocomplete="off"
-		class="absolute ml-[8px] h-full w-[350px] text-white bg-transparent focus:outline-none"
+		class="absolute ml-2 h-full w-[21.5rem] text-white bg-transparent focus:outline-none"
 	/>
 </div>

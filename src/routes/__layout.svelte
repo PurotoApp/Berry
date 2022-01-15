@@ -3,7 +3,7 @@
 	import Header from '../components/Header.svelte';
 </script>
 
-<main class="absolute min-w-max w-full top-[5em] md:top-[5rem]">
+<main class="absolute min-w-max w-full top-20">
 	<slot />
 </main>
 

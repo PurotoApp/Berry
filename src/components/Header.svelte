@@ -16,14 +16,14 @@
 	}
 </script>
 
-<header class="fixed min-w-[16rem] w-full mb:bottom-0 md:mt-6 md:top-0">
+<header class="fixed min-w-64 w-full mb:bottom-0 md:mt-6 md:top-0">
 	<div
-		class="absolute w-full min-h-full bg-gray-1 md:bg-background py-12 translate-y-[-15%] md:translate-y-[-50%]"
+		class="absolute w-full min-h-full bg-gray-1 md:bg-background py-12 translate-y-[-15%] md:-translate-y-1/2"
 	/>
 	<div class="relative flex flex-nowrap justify-between w-10/12 mx-auto">
 		<!--    Puroto Icon     -->
 		<div
-			class="focus:outline-1 focus:border-white w-[32px] h-[32px] cursor-pointer"
+			class="focus:outline-1 focus:border-white w-8 h-8 cursor-pointer"
 			onclick="window.location.href='/'"
 		>
 			<Icon />
@@ -53,7 +53,7 @@
 				</svg>
 				{#if user.hasUnreadNotification}
 					<div
-						class="text-xs h-[12px] w-[12px] rounded-full bg-red-2 -translate-y-3 translate-x--6 pointer-events-none"
+						class="text-xs h-3 w-3 rounded-full bg-red-2 -translate-y-3 translate-x--6 pointer-events-none"
 					>
 						<div class="text-xs h-full w-full rounded-full bg-red-1 animate-ping" />
 					</div>
@@ -65,7 +65,7 @@
 					<img draggable="false" src={user.avatar} class="h-8 w-8 rounded-full" alt={user.name} />
 					{#if user.hasUnreadMessage}
 						<div
-							class="text-xs h-[12px] w-[12px] rounded-full bg-red-2 -translate-y-3 translate-x-6 pointer-events-none"
+							class="text-xs h-3 w-3 rounded-full bg-red-2 -translate-y-3 translate-x-6 pointer-events-none"
 						>
 							<div class="text-xs h-full w-full rounded-full bg-red-1 animate-ping" />
 						</div>
@@ -86,7 +86,7 @@
 							<div class="w-full text-center rounded-md block py-2 hover:bg-gray-5 transition">
 								{#if user.hasUnreadMessage}
 									<div
-										class="absolute text-xs h-[12px] w-[12px] rounded-full bg-red-2 translate-y-2 translate-x-2 pointer-events-none"
+										class="absolute text-xs h-3 w-3 rounded-full bg-red-2 translate-y-2 translate-x-2 pointer-events-none"
 									>
 										<div class="text-xs h-full w-full rounded-full bg-red-1 animate-ping" />
 									</div>
