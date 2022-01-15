@@ -1,6 +1,6 @@
 <script>
-	import Post from './components/Post.svelte';
-	import WelcomeBack from './components/WelcomeBack.svelte';
+	import Post from '../components/Post.svelte';
+	import WelcomeBack from '../components/WelcomeBack.svelte';
 
 	let data = [
 		{
