@@ -24,7 +24,7 @@
 
 <WelcomeBack />
 
-<div class="relative left-1/2 translate-x-1/2 max-w-[95%] md:max-w-[30%]">
+<div class="relative left-1/2 -translate-x-1/2 max-w-[95%] md:max-w-[30%]">
 	{#each data as data}
 		<Post {...data} />
 	{/each}
