@@ -1,4 +1,5 @@
 <script>
+	import { to } from '../scripts/to.js';
 	import Icon from './Icon.svelte';
 	import SearchBar from './SearchBar.svelte';
 
@@ -22,9 +23,9 @@
 	/>
 	<div class="relative flex flex-nowrap mb-2 justify-between w-10/12 mx-auto md:mb-0">
 		<!--    Puroto Icon     -->
-		<a class="focus:outline-1 focus:border-white w-8 h-8 cursor-pointer" href="/">
+		<div class="focus:outline-1 focus:border-white w-8 h-8 cursor-pointer" on:click={()=>to("/")}>
 			<Icon />
-		</a>
+		</div>
 
 		<!--    Search Bar     -->
 		<div class="md-hidden">
@@ -34,7 +35,7 @@
 		<!--	Right Part    -->
 		<div class="md-hidden w-20 h-8 md:-ml-12 flex justify-between flex-row">
 			<!--	Notification Icon	-->
-			<a href="notification" class="cursor-pointer">
+			<div on:click={()=>to("/notification")} class="cursor-pointer">
 				<svg
 					width="32"
 					height="32"
@@ -57,7 +58,7 @@
 						<div class="text-xs h-full w-full rounded-full bg-red-1 animate-ping" />
 					</div>
 				{/if}
-			</a>
+			</div>
 
 			<div class="h-8 w-8 bg-gray-5 rounded-full cursor-pointer" on:click={toggleUser}>
 				{#if user.isLogOn}
@@ -109,14 +110,14 @@
 			</div>
 		</div>
 
-		<a href="/user/{user.username}" class="h-8 w-8 bg-gray-5 rounded-full desk-hidden">
+		<div on:click={()=>to("/user/{user.username}")} class="h-8 w-8 bg-gray-5 rounded-full desk-hidden">
 			{#if user.isLogOn}
 				<img draggable="false" src={user.avatar} class="h-8 w-8 rounded-full" alt={user.name} />
 			{/if}
-		</a>
+		</div>
 
 		{#if user.isLogOn}
-			<a href="notification" class="desk-hidden cursor-pointer">
+			<div on:click={()=>to("notification")} class="desk-hidden cursor-pointer">
 				<svg
 					width="32"
 					height="32"
@@ -139,7 +140,7 @@
 						<div class="text-xs h-full w-full rounded-full bg-red-1 animate-ping" />
 					</div>
 				{/if}
-			</a>
+			</div>
 		{/if}
 	</div>
 </header>

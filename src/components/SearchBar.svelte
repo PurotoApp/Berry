@@ -1,13 +1,14 @@
 <script>
 	import { browser } from '$app/env';
 	import { onMount } from 'svelte';
+	import { to } from '../scripts/to.js';
 
 	onMount(() => {
 		let searchArea = document.getElementById('searchArea');
 		searchArea.addEventListener('keydown', (e) => {
 			if (e.code == 'Enter') {
 				let searchValue = searchArea.value;
-				window.location.href = `/search/${searchValue}`;
+				to(`/search/${searchValue}`);
 			}
 		});
 	});
