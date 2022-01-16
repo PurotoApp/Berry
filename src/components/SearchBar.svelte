@@ -1,7 +1,8 @@
 <script>
 	import { browser } from '$app/env';
+	import { onMount } from 'svelte';
 
-	if (browser) {
+	onMount(() => {
 		let searchArea = document.getElementById('searchArea');
 		searchArea.addEventListener('keydown', (e) => {
 			if (e.code == 'Enter') {
@@ -9,7 +10,7 @@
 				window.location.href = `/search/${searchValue}`;
 			}
 		});
-	}
+	});
 </script>
 
 <div
