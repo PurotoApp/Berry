@@ -22,10 +22,7 @@
 	/>
 	<div class="relative flex flex-nowrap mb-2 justify-between w-10/12 mx-auto md:mb-0">
 		<!--    Puroto Icon     -->
-		<a
-			class="focus:outline-1 focus:border-white w-8 h-8 cursor-pointer"
-			href="/"
-		>
+		<a class="focus:outline-1 focus:border-white w-8 h-8 cursor-pointer" href="/">
 			<Icon />
 		</a>
 
