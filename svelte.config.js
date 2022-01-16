@@ -1,11 +1,11 @@
-import adapter from '@sveltejs/adapter-auto';
+import adapter from '@sveltejs/adapter-node';
 
-const config = {
+export default {
 	kit: {
-		adapter: adapter(),
+		adapter: adapter({
+			out: 'build'
+		}),
 
 		target: '#root'
 	}
 };
-
-export default config;

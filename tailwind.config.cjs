@@ -1,6 +1,6 @@
 module.exports = {
 	mode: 'jit',
-	purge: ['./src/**/*.svelte'],
+	content: ['./src/**/*.svelte'],
 	theme: {
 		screens: {
 			sm: '640px',
@@ -10,7 +10,7 @@ module.exports = {
 			'2xl': '1560px'
 		},
 		fontFamily: {
-			sans: 'Inter, "Public Sans", Helvetica, Ubuntu, Arial, sans-serif'
+			sans: 'Inter, sans-serif'
 		},
 		colors: {
 			transparent: 'transparent',
@@ -34,7 +34,15 @@ module.exports = {
 				10: '#CFC7E4'
 			},
 
-			purple: '#6D6BED',
+			blue: {
+				1: '#292852',
+				2: '#3C3B97',
+				3: '#5351D2',
+				4: '#6D6BED',
+				5: '#8F8EF1',
+				6: '#A09FEF',
+				7: '#C9C9F8'
+			},
 
 			red: {
 				1: '#E24848',
