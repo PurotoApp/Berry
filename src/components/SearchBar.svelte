@@ -16,7 +16,7 @@
 <div
 	class="md:rounded-md md:bg-gray-2 md:hover:bg-gray-3 md:active:bg-gray-4 md:h-8 md:w-96 transition"
 >
-	<label for="searchArea">
+	<label>
 		<svg
 			xmlns="http://www.w3.org/2000/svg"
 			class="inline translate-y-0.5 translate-x-1"
@@ -33,11 +33,13 @@
 				d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
 			/>
 		</svg>
-	</label>
 	<input
 		id="searchArea"
 		type="text"
 		autocomplete="off"
+		autocorrect="off"
+		spellcheck="off"
 		class="absolute ml-2 h-full w-[21.5rem] text-white bg-transparent focus:outline-none"
 	/>
+</label>
 </div>
