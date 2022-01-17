@@ -76,7 +76,7 @@
 				{/if}
 				<div
 					id="userCascadeMenu"
-					class="hidden min-h-8 min-w-8 w-32 bg-gray-4 -translate-x-1/3 rounded-md"
+					class="hidden min-h-8 min-w-8 w-32 bg-gray-5 -translate-x-1/3 rounded-md"
 				>
 					<div class="w-full mt-1 flex flex-col justify-center items-center">
 						{#if user.isLogOn}
