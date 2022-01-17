@@ -1,6 +1,6 @@
 <script context="module">
-	export async function load({ page }) {
-		let user = page.params.user;
+	export async function load({ params }) {
+		let user = params.user;
 		return { props: { user } };
 	}
 </script>

@@ -1,4 +1,6 @@
 <script>
+	import { to } from '../scripts/to.js';
+
 	export let avatar;
 	export let name;
 	export let username;
@@ -49,19 +51,19 @@
 
 <div class="grid w-full pt-1 mb-12 rounded-lg cursor-pointer hover:bg-gray-1 transition">
 	<div>
-		<a href="/user/{username}" class="w-10 h-10 select-none"
-			><div
+		<div on:click={() => to(`/user/${username}`)} class="w-10 h-10 select-none">
+			<div
 				class="inline-block rounded-full bg-contain bg-gray-5 w-10 h-10 cursor-pointer"
 				style="background-image: url('{avatar}')"
-			/></a
-		>
+			/>
+		</div>
 		<div class="inline-block ml-2 select-none">
 			<div class="block translate-y-1/4">
-				<a href="/user/{username}"
-					><span class="font-semibold hover:underline cursor-pointer">{name}</span><span
+				<div on:click={() => to(`/user/${username}`)}>
+					<span class="font-semibold hover:underline cursor-pointer">{name}</span><span
 						class="text-base ml-2 text-gray-5">@{username}</span
-					></a
-				>
+					>
+				</div>
 			</div>
 			<span class="text-sm select-none text-gray-5">{date}</span>
 		</div>
