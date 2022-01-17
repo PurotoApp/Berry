@@ -23,7 +23,7 @@
 	/>
 	<div class="relative flex flex-nowrap mb-2 justify-between w-10/12 mx-auto md:mb-0">
 		<!--    Puroto Icon     -->
-		<div class="focus:outline-1 focus:border-white w-8 h-8 cursor-pointer" on:click={()=>to("/")}>
+		<div class="focus:outline-1 focus:border-white w-8 h-8 cursor-pointer" on:click={() => to('/')}>
 			<Icon />
 		</div>
 
@@ -35,7 +35,7 @@
 		<!--	Right Part    -->
 		<div class="md-hidden w-20 h-8 md:-ml-12 flex justify-between flex-row">
 			<!--	Notification Icon	-->
-			<div on:click={()=>to("/notification")} class="cursor-pointer">
+			<div on:click={() => to('/notification')} class="cursor-pointer">
 				<svg
 					width="32"
 					height="32"
@@ -110,14 +110,17 @@
 			</div>
 		</div>
 
-		<div on:click={()=>to("/user/{user.username}")} class="h-8 w-8 bg-gray-5 rounded-full desk-hidden">
+		<div
+			on:click={() => to('/user/{user.username}')}
+			class="h-8 w-8 bg-gray-5 rounded-full desk-hidden"
+		>
 			{#if user.isLogOn}
 				<img draggable="false" src={user.avatar} class="h-8 w-8 rounded-full" alt={user.name} />
 			{/if}
 		</div>
 
 		{#if user.isLogOn}
-			<div on:click={()=>to("notification")} class="desk-hidden cursor-pointer">
+			<div on:click={() => to('notification')} class="desk-hidden cursor-pointer">
 				<svg
 					width="32"
 					height="32"
