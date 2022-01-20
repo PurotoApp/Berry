@@ -8,16 +8,18 @@
 	onMount(() => (loading = false));
 </script>
 
-<main class="absolute min-w-max w-full top-20">
-	<slot />
-</main>
-
-<Header />
-
 {#if loading}
 	<div class="absolute h-full w-full bg-background">
 		<div class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 animate-pulse">
 			<Icon size="6rem" stroke="#5351D2" />
 		</div>
 	</div>
+{/if}
+
+{#if !loading}
+<main class="absolute min-w-max w-full h-[calc(100vh-3.5rem)] mb:overflow-auto">
+	<slot />
+</main>
+
+<Header />
 {/if}
