@@ -17,7 +17,7 @@
 {/if}
 
 {#if !loading}
-<main class="absolute min-w-max w-full h-[calc(100vh-3.5rem)] mb:overflow-auto">
+<main class="absolute min-w-max w-full h-[calc(100vh-3.1rem)] md:h-full mb:overflow-auto">
 	<slot />
 </main>
 
