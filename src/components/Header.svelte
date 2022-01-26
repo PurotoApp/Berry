@@ -17,7 +17,7 @@
 	}
 </script>
 
-<header class="fixed min-w-64 w-full mb:bottom-0 md:mt-6 md:top-0">
+<header class="fixed min-w-64 w-full z-50 mb:bottom-0 md:mt-6 md:top-0">
 	<div
 		class="desk-hidden absolute w-full min-h-full bg-gray-1 py-12 translate-y-[-10%] md:-translate-y-1/2"
 	/>
