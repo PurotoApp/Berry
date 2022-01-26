@@ -111,7 +111,7 @@
 		</div>
 
 		<div
-			on:click={() => to('/user/{user.username}')}
+			on:click={() => to(`/user/${user.username}`)}
 			class="h-8 w-8 bg-gray-5 rounded-full desk-hidden"
 		>
 			{#if user.isLogOn}
