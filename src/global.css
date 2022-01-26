@@ -14,8 +14,14 @@
 }
 
 #banner {
-	-webkit-mask-image:-webkit-gradient(linear, left top, left bottom, from(rgba(0,0,0,1)), to(transparent));
-	mask-image: linear-gradient(to bottom, rgba(0,0,0,1), transparent);
+	-webkit-mask-image: -webkit-gradient(
+		linear,
+		left top,
+		left bottom,
+		from(rgba(0, 0, 0, 1)),
+		to(transparent)
+	);
+	mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1), transparent);
 }
 
 ::-webkit-scrollbar {
