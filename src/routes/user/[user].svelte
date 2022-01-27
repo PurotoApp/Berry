@@ -70,7 +70,7 @@
 		</div>
 	</div>
 	<div class="absolute w-full my-4">
-		<span class="inline-block">{aboutMe}</span>
+		<span class="inline-block md:w-1/2 break-all">{aboutMe}</span>
 		<div class="mt-4 flex justify-between md:hidden">
 			<button class="w-[49%] py-2 bg-blue-3 rounded-lg">
 				<span class="text-lg">Message</span>
