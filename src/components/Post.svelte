@@ -26,11 +26,11 @@
 			<div class="block translate-y-1/4">
 				<div on:click={() => to(`/user/${username}`)}>
 					<span class="font-semibold hover:underline cursor-pointer">{name}</span><span
-						class="text-base ml-2 text-gray-5">@{username}</span
+						class="text-base ml-2 text-gray-8">@{username}</span
 					>
 				</div>
 			</div>
-			<span class="text-sm select-none text-gray-5">{date}</span>
+			<span class="text-sm select-none text-gray-8">{date}</span>
 		</div>
 	</div>
 	<div class="bg-gray-4 rounded-lg min-h-8 pb-2">

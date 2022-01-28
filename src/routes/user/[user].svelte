@@ -11,8 +11,8 @@
 	export let user;
 	export let avatar;
 	export let banner;
-	export let name = user;
-	export let username;
+	export let name;
+	export let username = user;
 	export let aboutMe;
 	export let isFollowing = false;
 
@@ -53,6 +53,7 @@
 				<span class="block text-md text-gray-8 md:text-lg">@{username}</span>
 			</div>
 		</div>
+		<!--	Desktop		-->
 		<div class="md-hidden translate-y-[15%]">
 			<button class="w-24 py-1 bg-blue-3 mb-1 rounded-lg block">
 				<span class="text-lg">Message</span>
@@ -71,6 +72,7 @@
 	</div>
 	<div class="absolute w-full my-4">
 		<span class="inline-block md:w-1/2 break-all">{aboutMe}</span>
+		<!--	Mobile		-->
 		<div class="mt-4 flex justify-between md:hidden">
 			<button class="w-[49%] py-2 bg-blue-3 rounded-lg">
 				<span class="text-lg">Message</span>
