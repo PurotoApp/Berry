@@ -24,7 +24,10 @@
 
 <WelcomeBack />
 
-<div class="relative left-1/2 -translate-x-1/2 max-w-[95%] md:max-w-[30%]">
+<div class="relative mx-auto w-11/12 md:max-w-[30%]">
+	<div
+		class="sticky top-3 md-hidden w-full min-h-full bg-background z-10 py-12 translate-y-[-15%] md:-translate-y-1/2"
+	/>
 	{#each data as data}
 		<Post {...data} />
 	{/each}

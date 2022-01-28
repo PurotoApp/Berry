@@ -17,9 +17,9 @@
 	}
 </script>
 
-<header class="fixed min-w-64 w-full mb:bottom-0 md:mt-6 md:top-0">
+<header class="fixed min-w-64 w-full z-50 mb:bottom-0 md:mt-6 md:top-0">
 	<div
-		class="absolute w-full min-h-full bg-gray-1 md:bg-background py-12 translate-y-[-15%] md:-translate-y-1/2"
+		class="desk-hidden absolute w-full min-h-full bg-gray-1 py-12 translate-y-[-10%] md:-translate-y-1/2"
 	/>
 	<div class="relative flex flex-nowrap mb-2 justify-between w-10/12 mx-auto md:mb-0">
 		<!--    Puroto Icon     -->
@@ -111,7 +111,7 @@
 		</div>
 
 		<div
-			on:click={() => to('/user/{user.username}')}
+			on:click={() => to(`/user/${user.username}`)}
 			class="h-8 w-8 bg-gray-5 rounded-full desk-hidden"
 		>
 			{#if user.isLogOn}
