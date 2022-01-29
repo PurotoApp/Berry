@@ -15,9 +15,11 @@
 	let date = compareDates(createdAt);
 </script>
 
-<div class="grid w-full p-2 mb-6 rounded-lg cursor-pointer hover:bg-gray-1 transition">
+<div
+	class="grid 1/3  md:w-1/3 sm:w-[100%] p-1 mx-auto mb-6 rounded-lg cursor-pointer hover:bg-gray-1 transition"
+>
 	<!-- Post Header -->
-	<div class="flex items-center">
+	<div class="flex items-center mb-2">
 		<div
 			on:click={() => to(`/user/${username}`)}
 			class="inline-block rounded-full bg-contain bg-gray-5 w-10 h-10 cursor-pointer select-none"
@@ -35,8 +37,8 @@
 		</div>
 	</div>
 	<!-- Post Content -->
-	<div class="bg-gray-4 rounded-lg min-h-8 pb-2">
-		<div class="mx-4 my-4">
+	<div class="bg-gray-4 rounded-lg min-h-8 pb-1">
+		<div class="mx-2 my-2">
 			<span>{content}</span>
 			{#if media.hasMedia}
 				{#if media.type == 'image'}
@@ -49,11 +51,10 @@
 				{/if}
 			{/if}
 		</div>
-		<div
-			class="absolute h-8 w-1/6 flex flex-nowrap flex-row-reverse justify-between right-4 -translate-y-5"
-		>
+		<!-- Buttons -->
+		<div class="flex justify-end items-center mb-1">
 			<!--	Like		-->
-			<div class="w-6 h-6">
+			<div class="w-6 h-6 mx-2">
 				<svg
 					xmlns="http://www.w3.org/2000/svg"
 					class="hover:stroke-red-2 transition"
@@ -70,7 +71,7 @@
 				</svg>
 			</div>
 			<!--	Comment		-->
-			<div class="w-6 h-6">
+			<div class="w-6 h-6 mx-2">
 				<svg
 					xmlns="http://www.w3.org/2000/svg"
 					class="hover:stroke-blue-5 transition"
