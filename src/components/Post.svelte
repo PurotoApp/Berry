@@ -22,16 +22,16 @@
 	<div class="flex items-center justify-between">
 		<div class="flex items-center mb-2">
 			{#if avatar == null}
-			<div
-				on:click={() => to(`/user/${username}`)}
-				class="inline-block rounded-full bg-contain bg-gray-5 w-10 h-10 cursor-pointer select-none"
-			/>
+				<div
+					on:click={() => to(`/user/${username}`)}
+					class="inline-block rounded-full bg-contain bg-gray-5 w-10 h-10 cursor-pointer select-none"
+				/>
 			{:else}
-			<div
-				on:click={() => to(`/user/${username}`)}
-				class="inline-block rounded-full bg-contain bg-gray-5 w-10 h-10 cursor-pointer select-none"
-				style="background-image: url('{avatar}')"
-			/>
+				<div
+					on:click={() => to(`/user/${username}`)}
+					class="inline-block rounded-full bg-contain bg-gray-5 w-10 h-10 cursor-pointer select-none"
+					style="background-image: url('{avatar}')"
+				/>
 			{/if}
 			<div class="inline-block ml-2 select-none">
 				<div class="block translate-y-1/4">
