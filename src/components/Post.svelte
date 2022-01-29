@@ -16,24 +16,38 @@
 </script>
 
 <div
-	class="grid 1/3  md:w-1/3 sm:w-[100%] p-1 mx-auto mb-6 rounded-lg cursor-pointer hover:bg-gray-1 transition"
+	class="grid 1/3  md:w-1/3 sm:w-[100%] p-1 mx-auto mb-6 rounded-lg cursor-pointer hover:bg-gray-1 group transition"
 >
 	<!-- Post Header -->
-	<div class="flex items-center mb-2">
-		<div
-			on:click={() => to(`/user/${username}`)}
-			class="inline-block rounded-full bg-contain bg-gray-5 w-10 h-10 cursor-pointer select-none"
-			style="background-image: url('{avatar}')"
-		/>
-		<div class="inline-block ml-2 select-none">
-			<div class="block translate-y-1/4">
-				<div on:click={() => to(`/user/${username}`)}>
-					<span class="font-semibold hover:underline cursor-pointer">{name}</span><span
-						class="text-base ml-2 text-[#89899A]">@{username}</span
-					>
+	<div class="flex items-center justify-between">
+		<div class="flex items-center mb-2">
+			<div
+				on:click={() => to(`/user/${username}`)}
+				class="inline-block rounded-full bg-contain bg-gray-5 w-10 h-10 cursor-pointer select-none"
+				style="background-image: url('{avatar}')"
+			/>
+			<div class="inline-block ml-2 select-none">
+				<div class="block translate-y-1/4">
+					<div on:click={() => to(`/user/${username}`)}>
+						<span class="font-semibold hover:underline cursor-pointer">{name}</span><span
+							class="text-base ml-2 text-[#89899A]">@{username}</span
+						>
+					</div>
 				</div>
+				<span class="text-sm select-none text-[#89899A]">{date}</span>
 			</div>
-			<span class="text-sm select-none text-[#89899A]">{date}</span>
+		</div>
+		<div class="w-6 h-6 mx-2 group-hover:block hidden">
+			<svg
+				xmlns="http://www.w3.org/2000/svg"
+				class="h-5 w-5"
+				viewBox="0 0 20 20"
+				fill="currentColor"
+			>
+				<path
+					d="M10 6a2 2 0 110-4 2 2 0 010 4zM10 12a2 2 0 110-4 2 2 0 010 4zM10 18a2 2 0 110-4 2 2 0 010 4z"
+				/>
+			</svg>
 		</div>
 	</div>
 	<!-- Post Content -->
