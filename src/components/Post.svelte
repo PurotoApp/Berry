@@ -15,8 +15,9 @@
 	let date = compareDates(createdAt);
 </script>
 
-<div class="grid w-full pt-1 mb-6 rounded-lg cursor-pointer hover:bg-gray-1 transition">
-	<div>
+<div class="grid w-full p-2 mb-6 rounded-lg cursor-pointer hover:bg-gray-1 transition">
+	<!-- Post Header -->
+	<div class="flex items-center">
 		<div
 			on:click={() => to(`/user/${username}`)}
 			class="inline-block rounded-full bg-contain bg-gray-5 w-10 h-10 cursor-pointer select-none"
@@ -26,13 +27,14 @@
 			<div class="block translate-y-1/4">
 				<div on:click={() => to(`/user/${username}`)}>
 					<span class="font-semibold hover:underline cursor-pointer">{name}</span><span
-						class="text-base ml-2 text-gray-8">@{username}</span
+						class="text-base ml-2 text-[#89899A]">@{username}</span
 					>
 				</div>
 			</div>
-			<span class="text-sm select-none text-gray-8">{date}</span>
+			<span class="text-sm select-none text-[#89899A]">{date}</span>
 		</div>
 	</div>
+	<!-- Post Content -->
 	<div class="bg-gray-4 rounded-lg min-h-8 pb-2">
 		<div class="mx-4 my-4">
 			<span>{content}</span>

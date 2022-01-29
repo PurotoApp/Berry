@@ -36,6 +36,7 @@
 		<input
 			id="searchArea"
 			type="text"
+			placeholder="Search"
 			autocomplete="off"
 			autocorrect="off"
 			spellcheck="off"
