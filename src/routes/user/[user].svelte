@@ -97,7 +97,7 @@
 	</div>
 </div>
 
-<div class="md-hidden relative mx-auto w-11/12 md:max-w-[30%] top-24">
+<div class="md-hidden relative mx-auto w-11/12  top-24">
 	<div
 		class="sticky top-3 md-hidden w-full min-h-full bg-background z-10 py-12 translate-y-[-15%] md:-translate-y-1/2"
 	/>
