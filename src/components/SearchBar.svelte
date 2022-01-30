@@ -1,6 +1,6 @@
 <script>
 	import { onMount } from 'svelte';
-	import { to } from '../scripts/to.js';
+	import { to } from '../scripts/to.ts';
 
 	onMount(() => {
 		let searchArea = document.getElementById('searchArea');

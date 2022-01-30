@@ -1,0 +1,27 @@
+{
+	"short_name": "Puroto",
+	"name": "Puroto",
+	"start_url": "/",
+	"scope": "/",
+	"icons": [
+		{
+			"src": "192.png",
+			"type": "image/png",
+			"sizes": "192x192"
+		},
+		{
+			"src": "512.png",
+			"type": "image/png",
+			"sizes": "512x512"
+		},
+		{
+			"src": "mask.png",
+			"type": "image/png",
+			"sizes": "512x512",
+			"purpose": "any maskable"
+		}
+	],
+	"display": "standalone",
+	"theme_color": "#222027",
+	"background_color": "#222027"
+}

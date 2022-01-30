@@ -1,5 +1,5 @@
 <script>
-	import { to } from '../scripts/to.js';
+	import { to } from '../scripts/to.ts';
 	import Icon from './Icon.svelte';
 	import SearchBar from './SearchBar.svelte';
 
