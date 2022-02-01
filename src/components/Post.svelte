@@ -1,6 +1,7 @@
-<script>
-	import { to } from '../scripts/to.ts';
-	import { compareDates } from '../scripts/compareDates.ts';
+<script lang="ts">
+	import { to } from '../scripts/to';
+	import { compareDates } from '../scripts/compareDates';
+	
 	export let avatar;
 	export let name;
 	export let username;

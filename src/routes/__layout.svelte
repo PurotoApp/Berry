@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
 	import { onMount } from 'svelte';
 	import '../global.css';
 	import Header from '../components/Header.svelte';

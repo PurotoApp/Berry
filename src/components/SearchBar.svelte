@@ -1,9 +1,9 @@
-<script>
+<script lang="ts">
 	import { onMount } from 'svelte';
-	import { to } from '../scripts/to.ts';
+	import { to } from '../scripts/to';
 
 	onMount(() => {
-		let searchArea = document.getElementById('searchArea');
+		let searchArea = document.getElementById('searchArea') as HTMLInputElement;
 		searchArea.addEventListener('keydown', (e) => {
 			if (e.code == 'Enter') {
 				let searchValue = searchArea.value;
@@ -39,7 +39,7 @@
 			placeholder="Search"
 			autocomplete="off"
 			autocorrect="off"
-			spellcheck="off"
+			spellcheck="false"
 			class="absolute ml-2 h-full w-[21.5rem] text-white bg-transparent focus:outline-none"
 		/>
 	</label>

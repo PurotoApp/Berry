@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
 	import Post from '../components/Post.svelte';
 	import WelcomeBack from '../components/WelcomeBack.svelte';
 
