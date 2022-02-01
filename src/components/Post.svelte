@@ -60,7 +60,7 @@
 	</div>
 	<!-- Post Content -->
 	<div class="bg-gray-4 rounded-lg min-h-8 pb-1">
-		<div class="mx-2 my-2">
+		<div class="mx-2 mt-3 -mb-3">
 			<span>{content}</span>
 			{#if media.hasMedia}
 				{#if media.type == 'image'}
