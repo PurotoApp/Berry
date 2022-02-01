@@ -26,7 +26,7 @@
 
 <div class="relative mx-auto w-10/12 ">
 	<div
-		class="sticky top-3 md-hidden w-full min-h-full bg-background z-10 py-12 translate-y-[-15%] md:-translate-y-1"
+		class="sticky top-3 md-hidden w-full min-h-full bg-background z-10 py-12 translate-y-[-15%] md:-translate-y-1/2"
 	/>
 	{#each data as data}
 		<Post {...data} />
