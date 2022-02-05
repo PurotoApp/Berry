@@ -17,13 +17,13 @@
 	}
 </script>
 
-<header class="fixed min-w-64 w-full z-50 mb:bottom-0 md:mt-6 md:top-0">
+<header class="min-w-64 mb:bottom-0 fixed z-50 w-full md:top-0 md:mt-6">
 	<div
-		class="desk-hidden absolute w-full min-h-full bg-gray-1 py-12 translate-y-[-10%] md:-translate-y-1/2"
+		class="desk-hidden absolute min-h-full w-full translate-y-[-10%] bg-gray-1 py-12 md:-translate-y-1/2"
 	/>
-	<div class="relative flex flex-nowrap mb-2 justify-between w-10/12 mx-auto md:mb-0">
+	<div class="relative mx-auto mb-2 flex w-10/12 flex-nowrap justify-between md:mb-0">
 		<!--    Puroto Icon     -->
-		<div class="focus:outline-1 focus:border-white w-8 h-8 cursor-pointer" on:click={() => to('/')}>
+		<div class="h-8 w-8 cursor-pointer focus:border-white focus:outline-1" on:click={() => to('/')}>
 			<Icon />
 		</div>
 
@@ -33,7 +33,7 @@
 		</div>
 
 		<!--	Right Part    -->
-		<div class="md-hidden w-20 h-8 md:-ml-12 flex justify-between flex-row">
+		<div class="md-hidden flex h-8 w-20 flex-row justify-between md:-ml-12">
 			<!--	Notification Icon	-->
 			<div on:click={() => to('/notification')} class="cursor-pointer">
 				<svg
@@ -53,21 +53,21 @@
 				</svg>
 				{#if user.hasUnreadNotification}
 					<div
-						class="text-xs h-3 w-3 rounded-full bg-red-2 -translate-y-3 translate-x--6 pointer-events-none"
+						class="pointer-events-none h-3 w-3 -translate-y-3 translate-x--6 rounded-full bg-red-2 text-xs"
 					>
-						<div class="text-xs h-full w-full rounded-full bg-red-1 animate-ping" />
+						<div class="h-full w-full animate-ping rounded-full bg-red-1 text-xs" />
 					</div>
 				{/if}
 			</div>
 
-			<div class="h-8 w-8 bg-gray-5 rounded-full cursor-pointer" on:click={toggleUser}>
+			<div class="h-8 w-8 cursor-pointer rounded-full bg-gray-5" on:click={toggleUser}>
 				{#if user.isLogOn}
 					<img draggable="false" src={user.avatar} class="h-8 w-8 rounded-full" alt={user.name} />
 					{#if user.hasUnreadMessage}
 						<div
-							class="text-xs h-3 w-3 rounded-full bg-red-2 -translate-y-3 translate-x-6 pointer-events-none"
+							class="pointer-events-none h-3 w-3 -translate-y-3 translate-x-6 rounded-full bg-red-2 text-xs"
 						>
-							<div class="text-xs h-full w-full rounded-full bg-red-1 animate-ping" />
+							<div class="h-full w-full animate-ping rounded-full bg-red-1 text-xs" />
 						</div>
 					{/if}
 				{/if}
@@ -76,32 +76,32 @@
 				{/if}
 				<div
 					id="userCascadeMenu"
-					class="hidden min-h-8 min-w-8 w-32 bg-gray-5 -translate-x-1/3 rounded-md"
+					class="min-h-8 min-w-8 hidden w-32 -translate-x-1/3 rounded-md bg-gray-5"
 				>
-					<div class="w-full mt-1 flex flex-col justify-center items-center">
+					<div class="mt-1 flex w-full flex-col items-center justify-center">
 						{#if user.isLogOn}
-							<div class="w-full text-center rounded-md block py-2 hover:bg-gray-5 transition">
+							<div class="block w-full rounded-md py-2 text-center transition hover:bg-gray-5">
 								<a href="/user/{user.username}">My Profile</a>
 							</div>
-							<div class="w-full text-center rounded-md block py-2 hover:bg-gray-5 transition">
+							<div class="block w-full rounded-md py-2 text-center transition hover:bg-gray-5">
 								{#if user.hasUnreadMessage}
 									<div
-										class="absolute text-xs h-3 w-3 rounded-full bg-red-2 translate-y-2 translate-x-2 pointer-events-none"
+										class="pointer-events-none absolute h-3 w-3 translate-y-2 translate-x-2 rounded-full bg-red-2 text-xs"
 									>
-										<div class="text-xs h-full w-full rounded-full bg-red-1 animate-ping" />
+										<div class="h-full w-full animate-ping rounded-full bg-red-1 text-xs" />
 									</div>
 								{/if}
 								<a href="/messages">Messages</a>
 							</div>
-							<div class="w-full text-center rounded-md block py-2 hover:bg-gray-5 transition">
+							<div class="block w-full rounded-md py-2 text-center transition hover:bg-gray-5">
 								<a href="/settings">Settings</a>
 							</div>
 						{/if}
 						{#if !user.isLogOn}
-							<div class="w-full text-center rounded-md block py-2 hover:bg-gray-5 transition">
+							<div class="block w-full rounded-md py-2 text-center transition hover:bg-gray-5">
 								<a href="/new/login">Login</a>
 							</div>
-							<div class="w-full text-center rounded-md block py-2 hover:bg-gray-5 transition">
+							<div class="block w-full rounded-md py-2 text-center transition hover:bg-gray-5">
 								<a href="/new/join">Join</a>
 							</div>
 						{/if}
@@ -112,7 +112,7 @@
 
 		<div
 			on:click={() => to(`/user/${user.username}`)}
-			class="h-8 w-8 bg-gray-5 rounded-full desk-hidden"
+			class="desk-hidden h-8 w-8 rounded-full bg-gray-5"
 		>
 			{#if user.isLogOn}
 				<img draggable="false" src={user.avatar} class="h-8 w-8 rounded-full" alt={user.name} />
@@ -138,9 +138,9 @@
 				</svg>
 				{#if user.hasUnreadNotification}
 					<div
-						class="text-xs h-3 w-3 rounded-full bg-red-2 -translate-y-3 translate-x--6 pointer-events-none"
+						class="pointer-events-none h-3 w-3 -translate-y-3 translate-x--6 rounded-full bg-red-2 text-xs"
 					>
-						<div class="text-xs h-full w-full rounded-full bg-red-1 animate-ping" />
+						<div class="h-full w-full animate-ping rounded-full bg-red-1 text-xs" />
 					</div>
 				{/if}
 			</div>

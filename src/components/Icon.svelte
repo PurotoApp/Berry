@@ -1,6 +1,6 @@
 <script lang="ts">
-	export let size:any = 32;
-	export let stroke:string = 'white';
+	export let size: any = 32;
+	export let stroke: string = 'white';
 </script>
 
 <svg

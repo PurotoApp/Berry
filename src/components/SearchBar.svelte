@@ -14,7 +14,7 @@
 </script>
 
 <div
-	class="md:rounded-md md:bg-gray-2 md:hover:bg-gray-3 md:active:bg-gray-4 md:h-8 md:w-96 transition"
+	class="transition md:h-8 md:w-96 md:rounded-md md:bg-gray-2 md:hover:bg-gray-3 md:active:bg-gray-4"
 >
 	<label>
 		<svg
@@ -40,7 +40,7 @@
 			autocomplete="off"
 			autocorrect="off"
 			spellcheck="false"
-			class="absolute ml-2 h-full w-[21.5rem] text-white bg-transparent focus:outline-none"
+			class="absolute ml-2 h-full w-[21.5rem] bg-transparent text-white focus:outline-none"
 		/>
 	</label>
 </div>

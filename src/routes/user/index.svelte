@@ -1,5 +1,5 @@
 <script lang="ts">
-	import User from './[user].svelte'
+	import User from './[user].svelte';
 </script>
 
-<User {...null}/>
+<User {...null} />

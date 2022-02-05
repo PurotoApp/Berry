@@ -1,5 +1,5 @@
 <script lang="ts">
-    import Path from './[path].svelte';
+	import Path from './[path].svelte';
 </script>
 
 <Path />
