@@ -2,10 +2,10 @@
 	import { to } from '../scripts/to';
 	import { compareDates } from '../scripts/compareDates';
 
-	export let avatar;
-	export let name;
-	export let username;
-	export let content;
+	export let avatar: string;
+	export let name: string;
+	export let username: string;
+	export let content: string;
 	export let createdAt;
 	export let media = {
 		hasMedia: false,

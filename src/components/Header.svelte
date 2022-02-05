@@ -24,7 +24,7 @@
 	<div class="relative mx-auto mb-2 flex w-10/12 flex-nowrap justify-between md:mb-0">
 		<!--    Puroto Icon     -->
 		<div class="h-8 w-8 cursor-pointer focus:border-white focus:outline-1" on:click={() => to('/')}>
-			<Icon />
+			<Icon size="32" />
 		</div>
 
 		<!--    Search Bar     -->

@@ -1,11 +1,11 @@
 export function compareDates(date) {
-	let date1 = new Date(date).getTime();
-	let date2 = new Date().getTime();
-	let difference_ms = date2 - date1;
-	let difference_days = Math.floor(difference_ms / (1000 * 3600 * 24));
-	let difference_hours = Math.floor(difference_ms / (1000 * 3600));
-	let difference_minutes = Math.floor(difference_ms / (1000 * 60));
-	let difference_seconds = Math.floor(difference_ms / 1000);
+	const date1 = new Date(date).getTime();
+	const date2 = new Date().getTime();
+	const difference_ms = date2 - date1;
+	const difference_days = Math.floor(difference_ms / (1000 * 3600 * 24));
+	const difference_hours = Math.floor(difference_ms / (1000 * 3600));
+	const difference_minutes = Math.floor(difference_ms / (1000 * 60));
+	const difference_seconds = Math.floor(difference_ms / 1000);
 	if (difference_days >= 7) {
 		if (new Date(date).getFullYear() != new Date().getFullYear()) {
 			// returns DD/MM/YYYY
