@@ -6,8 +6,6 @@ export default {
 	kit: {
 		adapter: adapter({
 			out: 'build'
-		}),
-
-		target: '#root'
+		})
 	}
 };
