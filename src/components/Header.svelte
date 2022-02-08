@@ -12,8 +12,9 @@
 		hasUnreadMessage: false
 	};
 
+	let showUserMenu = false;
 	function toggleUser() {
-		document.getElementById('userCascadeMenu').classList.toggle('hidden');
+		showUserMenu ? showUserMenu=false : showUserMenu=true;;
 	}
 </script>
 
@@ -74,16 +75,16 @@
 				{#if !user.isLogOn}
 					<div class="h-8 w-8" />
 				{/if}
+				{#if showUserMenu}
 				<div
-					id="userCascadeMenu"
-					class="min-h-8 min-w-8 hidden w-32 -translate-x-1/3 rounded-md bg-gray-5"
+					class="min-h-8 min-w-8 w-32 -translate-x-1/3 rounded-md bg-gray-5"
 				>
 					<div class="mt-1 flex w-full flex-col items-center justify-center">
 						{#if user.isLogOn}
-							<div class="block w-full rounded-md py-2 text-center transition hover:bg-gray-5">
+							<div class="block w-full rounded-md py-2 text-center transition hover:bg-gray-6">
 								<a href="/user/{user.username}">My Profile</a>
 							</div>
-							<div class="block w-full rounded-md py-2 text-center transition hover:bg-gray-5">
+							<div class="block w-full rounded-md py-2 text-center transition hover:bg-gray-6">
 								{#if user.hasUnreadMessage}
 									<div
 										class="pointer-events-none absolute h-3 w-3 translate-y-2 translate-x-2 rounded-full bg-red-2 text-xs"
@@ -93,20 +94,21 @@
 								{/if}
 								<a href="/messages">Messages</a>
 							</div>
-							<div class="block w-full rounded-md py-2 text-center transition hover:bg-gray-5">
+							<div class="block w-full rounded-md py-2 text-center transition hover:bg-gray-6">
 								<a href="/settings">Settings</a>
 							</div>
 						{/if}
 						{#if !user.isLogOn}
-							<div class="block w-full rounded-md py-2 text-center transition hover:bg-gray-5">
-								<a href="/new/login">Login</a>
+							<div class="block w-full rounded-md py-2 text-center transition hover:bg-gray-6">
+								<a href="/login">Login</a>
 							</div>
-							<div class="block w-full rounded-md py-2 text-center transition hover:bg-gray-5">
-								<a href="/new/join">Join</a>
+							<div class="block w-full rounded-md py-2 text-center transition hover:bg-gray-6">
+								<a href="/join">Join</a>
 							</div>
 						{/if}
 					</div>
 				</div>
+				{/if}
 			</div>
 		</div>
 
