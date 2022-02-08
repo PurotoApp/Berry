@@ -45,7 +45,7 @@
 				<span class="select-none text-sm text-[#89899A]">{date}</span>
 			</div>
 		</div>
-		<div class="mx-2 hidden h-6 w-6 group-hover:block">
+		<div class="mx-2 hidden h-6 w-6 group-hover:block text-[#89899A] hover:text-gray-10 transition">
 			<svg
 				xmlns="http://www.w3.org/2000/svg"
 				class="h-5 w-5"
