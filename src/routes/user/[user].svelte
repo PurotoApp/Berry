@@ -45,7 +45,7 @@
 
 	let showSideMenu = false;
 	function toggleMenu() {
-		showSideMenu ? showSideMenu=false : showSideMenu=true;
+		showSideMenu ? (showSideMenu = false) : (showSideMenu = true);
 	}
 </script>
 
@@ -72,11 +72,11 @@
 		</div>
 		<!--	Desktop		-->
 		<div class="md-hidden translate-y-[15%] select-none">
-			<div class="absolute -top-8 left-20 h-6 w-6 text-[#89899A] hover:text-gray-10 transition">
+			<div class="absolute -top-8 left-20 h-6 w-6 text-[#89899A] transition hover:text-gray-10">
 				<svg
 					on:click={toggleMenu}
 					xmlns="http://www.w3.org/2000/svg"
-					class="cursor-pointer h-5 w-5"
+					class="h-5 w-5 cursor-pointer"
 					viewBox="0 0 20 20"
 					fill="currentColor"
 				>
@@ -85,24 +85,50 @@
 					/>
 				</svg>
 				{#if showSideMenu}
-				<div class="min-h-8 min-w-8 w-32 -translate-x-[calc(100%-1rem)] rounded-md bg-gray-5 text-white">
-					<div class="block w-full rounded-md py-2 text-center transition hover:bg-gray-6">
-						<div class="translate-x-2">
-							<svg xmlns="http://www.w3.org/2000/svg" class="absolute h-5 w-5 translate-y-1 translate-x-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 21v-4m0 0V5a2 2 0 012-2h6.5l1 1H21l-3 6 3 6h-8.5l-1-1H5a2 2 0 00-2 2zm9-13.5V9" />
-							</svg>
-							<span>Report</span>
+					<div
+						class="min-h-8 min-w-8 w-32 -translate-x-[calc(100%-1rem)] rounded-md bg-gray-5 text-white"
+					>
+						<div class="block w-full rounded-md py-2 text-center transition hover:bg-gray-6">
+							<div class="translate-x-2">
+								<svg
+									xmlns="http://www.w3.org/2000/svg"
+									class="absolute h-5 w-5 translate-y-1 translate-x-3"
+									fill="none"
+									viewBox="0 0 24 24"
+									stroke="currentColor"
+								>
+									<path
+										stroke-linecap="round"
+										stroke-linejoin="round"
+										stroke-width="2"
+										d="M3 21v-4m0 0V5a2 2 0 012-2h6.5l1 1H21l-3 6 3 6h-8.5l-1-1H5a2 2 0 00-2 2zm9-13.5V9"
+									/>
+								</svg>
+								<span>Report</span>
+							</div>
+						</div>
+						<div
+							class="block w-full rounded-md py-2 text-center text-red-2 transition hover:bg-gray-6"
+						>
+							<div class="translate-x-2">
+								<svg
+									xmlns="http://www.w3.org/2000/svg"
+									class="absolute h-5 w-5 translate-y-1 translate-x-3"
+									fill="none"
+									viewBox="0 0 24 24"
+									stroke="currentColor"
+								>
+									<path
+										stroke-linecap="round"
+										stroke-linejoin="round"
+										stroke-width="2"
+										d="M18.364 18.364A9 9 0 005.636 5.636m12.728 12.728A9 9 0 015.636 5.636m12.728 12.728L5.636 5.636"
+									/>
+								</svg>
+								<span class="">Block</span>
+							</div>
 						</div>
 					</div>
-					<div class="block w-full rounded-md py-2 text-center transition hover:bg-gray-6 text-red-2">
-						<div class="translate-x-2">
-							<svg xmlns="http://www.w3.org/2000/svg" class="absolute h-5 w-5 translate-y-1 translate-x-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18.364 18.364A9 9 0 005.636 5.636m12.728 12.728A9 9 0 015.636 5.636m12.728 12.728L5.636 5.636" />
-							</svg>
-							<span class="">Block</span>
-						</div>
-					</div>
-				</div>
 				{/if}
 			</div>
 			<button class="mb-1 block w-24 rounded-lg bg-blue-3 py-1">

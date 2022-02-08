@@ -14,7 +14,7 @@
 
 	let showUserMenu = false;
 	function toggleUser() {
-		showUserMenu ? showUserMenu=false : showUserMenu=true;;
+		showUserMenu ? (showUserMenu = false) : (showUserMenu = true);
 	}
 </script>
 
@@ -76,38 +76,36 @@
 					<div class="h-8 w-8" />
 				{/if}
 				{#if showUserMenu}
-				<div
-					class="min-h-8 min-w-8 w-32 -translate-x-1/3 rounded-md bg-gray-5"
-				>
-					<div class="mt-1 flex w-full flex-col items-center justify-center">
-						{#if user.isLogOn}
-							<div class="block w-full rounded-md py-2 text-center transition hover:bg-gray-6">
-								<a href="/user/{user.username}">My Profile</a>
-							</div>
-							<div class="block w-full rounded-md py-2 text-center transition hover:bg-gray-6">
-								{#if user.hasUnreadMessage}
-									<div
-										class="pointer-events-none absolute h-3 w-3 translate-y-2 translate-x-2 rounded-full bg-red-2 text-xs"
-									>
-										<div class="h-full w-full animate-ping rounded-full bg-red-1 text-xs" />
-									</div>
-								{/if}
-								<a href="/messages">Messages</a>
-							</div>
-							<div class="block w-full rounded-md py-2 text-center transition hover:bg-gray-6">
-								<a href="/settings">Settings</a>
-							</div>
-						{/if}
-						{#if !user.isLogOn}
-							<div class="block w-full rounded-md py-2 text-center transition hover:bg-gray-6">
-								<a href="/login">Login</a>
-							</div>
-							<div class="block w-full rounded-md py-2 text-center transition hover:bg-gray-6">
-								<a href="/join">Join</a>
-							</div>
-						{/if}
+					<div class="min-h-8 min-w-8 w-32 -translate-x-1/3 rounded-md bg-gray-5">
+						<div class="mt-1 flex w-full flex-col items-center justify-center">
+							{#if user.isLogOn}
+								<div class="block w-full rounded-md py-2 text-center transition hover:bg-gray-6">
+									<a href="/user/{user.username}">My Profile</a>
+								</div>
+								<div class="block w-full rounded-md py-2 text-center transition hover:bg-gray-6">
+									{#if user.hasUnreadMessage}
+										<div
+											class="pointer-events-none absolute h-3 w-3 translate-y-2 translate-x-2 rounded-full bg-red-2 text-xs"
+										>
+											<div class="h-full w-full animate-ping rounded-full bg-red-1 text-xs" />
+										</div>
+									{/if}
+									<a href="/messages">Messages</a>
+								</div>
+								<div class="block w-full rounded-md py-2 text-center transition hover:bg-gray-6">
+									<a href="/settings">Settings</a>
+								</div>
+							{/if}
+							{#if !user.isLogOn}
+								<div class="block w-full rounded-md py-2 text-center transition hover:bg-gray-6">
+									<a href="/login">Login</a>
+								</div>
+								<div class="block w-full rounded-md py-2 text-center transition hover:bg-gray-6">
+									<a href="/join">Join</a>
+								</div>
+							{/if}
+						</div>
 					</div>
-				</div>
 				{/if}
 			</div>
 		</div>
