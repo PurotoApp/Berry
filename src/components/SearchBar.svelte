@@ -40,7 +40,7 @@
 			autocomplete="off"
 			autocorrect="off"
 			spellcheck="false"
-			class="absolute ml-2 h-full w-[21.5rem] bg-transparent text-white focus:outline-none"
+			class="absolute ml-2 h-full w-[21.5rem] bg-transparent text-white select-none focus:outline-none"
 		/>
 	</label>
 </div>
