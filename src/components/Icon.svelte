@@ -1,5 +1,5 @@
-<script>
-	export let size = 32;
+<script lang="ts">
+	export let size;
 	export let stroke = 'white';
 </script>
 

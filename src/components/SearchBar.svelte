@@ -1,9 +1,9 @@
-<script>
+<script lang="ts">
 	import { onMount } from 'svelte';
-	import { to } from '../scripts/to.ts';
+	import { to } from '$lib/to';
 
 	onMount(() => {
-		let searchArea = document.getElementById('searchArea');
+		let searchArea = document.getElementById('searchArea') as HTMLInputElement;
 		searchArea.addEventListener('keydown', (e) => {
 			if (e.code == 'Enter') {
 				let searchValue = searchArea.value;
@@ -14,7 +14,7 @@
 </script>
 
 <div
-	class="md:rounded-md md:bg-gray-2 md:hover:bg-gray-3 md:active:bg-gray-4 md:h-8 md:w-96 transition"
+	class="transition md:h-8 md:w-96 md:rounded-md md:bg-gray-2 md:hover:bg-gray-3 md:active:bg-gray-4"
 >
 	<label>
 		<svg
@@ -39,8 +39,8 @@
 			placeholder="Search"
 			autocomplete="off"
 			autocorrect="off"
-			spellcheck="off"
-			class="absolute ml-2 h-full w-[21.5rem] text-white bg-transparent focus:outline-none"
+			spellcheck="false"
+			class="absolute ml-2 h-full w-[21.5rem] select-none bg-transparent text-white focus:outline-none"
 		/>
 	</label>
 </div>

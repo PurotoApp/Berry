@@ -1,50 +1,49 @@
-<script>
-	import { to } from '../scripts/to.ts';
-	import { compareDates } from '../scripts/compareDates.ts';
-	export let avatar;
-	export let name;
-	export let username;
-	export let content;
-	export let createdAt;
-	export let media = {
-		hasMedia: false,
-		type: null,
-		url: null
-	};
+<script lang="ts">
+	import { to } from '$lib/to';
+	import { compareDates } from '$lib/compareDates';
+	import type { IPost } from '$lib/interfaces';
 
-	let date = compareDates(createdAt);
+	export let post: IPost = {
+		author: {
+			name: null,
+			username: null,
+			avatar: null
+		},
+		content: null,
+		date: null
+	};
+	post.date = compareDates(Number(post.date));
 </script>
 
 <div
-	class="grid 1/3  md:w-1/3 sm:w-[100%] p-1 mx-auto mb-6 rounded-lg cursor-pointer hover:bg-gray-1 group transition"
+	class="1/3 group  mx-auto mb-6 grid cursor-pointer rounded-lg p-1 transition hover:bg-gray-1 sm:w-[100%] md:w-1/3"
 >
 	<!-- Post Header -->
 	<div class="flex items-center justify-between">
-		<div class="flex items-center mb-2">
-			{#if avatar == null}
+		<div class="mb-2 flex items-center">
+			{#if post.author.avatar == null}
 				<div
-					on:click={() => to(`/user/${username}`)}
-					class="inline-block rounded-full bg-contain bg-gray-5 w-10 h-10 cursor-pointer select-none"
+					on:click={() => to(`/user/${post.author.username}`)}
+					class="inline-block h-10 w-10 cursor-pointer select-none rounded-full bg-gray-5 bg-contain"
 				/>
 			{:else}
 				<div
-					on:click={() => to(`/user/${username}`)}
+					on:click={() => to(`/user/${post.author.username}`)}
 					class="inline-block rounded-full bg-contain bg-gray-5 w-10 h-10 cursor-pointer select-none"
-					style="background-image: url('{avatar}')"
+					style="background-image: url('{post.author.avatar}')"
 				/>
 			{/if}
-			<div class="inline-block ml-2 select-none">
+			<div class="ml-2 inline-block select-none">
 				<div class="block translate-y-1/4">
-					<div on:click={() => to(`/user/${username}`)}>
-						<span class="font-semibold hover:underline cursor-pointer">{name}</span><span
-							class="text-base ml-2 text-[#89899A]">@{username}</span
-						>
+					<div on:click={() => to(`/user/${post.author.username}`)}>
+						<span class="cursor-pointer font-semibold hover:underline">{post.author.name}</span
+						><span class="ml-2 text-base text-[#89899A]">@{post.author.username}</span>
 					</div>
 				</div>
-				<span class="text-sm select-none text-[#89899A]">{date}</span>
+				<span class="select-none text-sm text-[#89899A]">{post.date}</span>
 			</div>
 		</div>
-		<div class="w-6 h-6 mx-2 group-hover:block hidden">
+		<div class="mx-2 hidden h-6 w-6 text-[#89899A] transition hover:text-gray-10 group-hover:block">
 			<svg
 				xmlns="http://www.w3.org/2000/svg"
 				class="h-5 w-5"
@@ -58,14 +57,14 @@
 		</div>
 	</div>
 	<!-- Post Content -->
-	<div class="bg-gray-4 rounded-lg min-h-8 pb-1">
-		<div class="mx-2 my-2">
-			<span>{content}</span>
-			{#if media.hasMedia}
-				{#if media.type == 'image'}
+	<div class="min-h-8 rounded-lg bg-gray-4 pb-1">
+		<div class="mx-2 mt-3 -mb-3">
+			<span>{post.content}</span>
+			{#if post.media}
+				{#if post.media.type == 'image'}
 					<img
-						src={media.url}
-						class="select-none object-cover mt-2 mb-6 w-full min-h-16 max-h-[32rem] rounded-sm"
+						src={post.media.url}
+						class="min-h-16 mt-2 mb-6 max-h-[32rem] w-full select-none rounded-sm object-cover"
 						loading="lazy"
 						alt="Post media"
 					/>
@@ -73,12 +72,12 @@
 			{/if}
 		</div>
 		<!-- Buttons -->
-		<div class="flex justify-end items-center mb-1">
+		<div class="mb-1 flex items-center justify-end">
 			<!--	Comment		-->
-			<div class="w-6 h-6 mx-2">
+			<div class="mx-2 h-6 w-6">
 				<svg
 					xmlns="http://www.w3.org/2000/svg"
-					class="hover:stroke-blue-5 transition"
+					class="transition hover:stroke-blue-5"
 					fill="none"
 					viewBox="0 0 24 24"
 					stroke="currentColor"
@@ -92,10 +91,10 @@
 				</svg>
 			</div>
 			<!--	Like		-->
-			<div class="w-6 h-6 mx-2">
+			<div class="mx-2 h-6 w-6">
 				<svg
 					xmlns="http://www.w3.org/2000/svg"
-					class="hover:stroke-red-2 transition"
+					class="transition hover:stroke-red-2"
 					fill="none"
 					viewBox="0 0 24 24"
 					stroke="currentColor"

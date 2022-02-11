@@ -1,7 +1,5 @@
-<script>
-	import { onMount } from 'svelte';
-
-	onMount(() => {
-		window.location.href = '/';
-	});
+<script lang="ts">
+	import User from './[user].svelte';
 </script>
+
+<User {...null} />

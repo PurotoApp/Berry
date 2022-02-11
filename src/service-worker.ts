@@ -1,5 +1,7 @@
 /// <reference lib="webworker" />
 
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-ignore
 import { build, files, timestamp } from '$service-worker';
 
 const worker = self as unknown as ServiceWorkerGlobalScope;

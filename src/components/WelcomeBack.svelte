@@ -1,3 +1,3 @@
-<div class="relative mt-0 md:mt-24 w-10/12 mx-auto sm:my-5  text-center ">
+<div class="relative z-[12] mx-auto mt-0 w-10/12 text-center sm:my-5  md:mt-24 ">
 	<h1 class="text-4xl">Welcome back.</h1>
 </div>

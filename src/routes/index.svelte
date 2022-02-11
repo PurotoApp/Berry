@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
 	import Post from '../components/Post.svelte';
 	import WelcomeBack from '../components/WelcomeBack.svelte';
 
@@ -26,7 +26,7 @@
 
 <div class="relative mx-auto w-10/12 ">
 	<div
-		class="sticky top-3 md-hidden w-full min-h-full bg-background z-10 py-12 translate-y-[-15%] md:-translate-y-1"
+		class="md-hidden sticky top-3 z-10 min-h-full w-full translate-y-[-15%] bg-background py-12 md:-translate-y-1/2"
 	/>
 	{#each data as data}
 		<Post {...data} />
