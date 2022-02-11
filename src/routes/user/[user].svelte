@@ -1,16 +1,19 @@
 <script context="module">
 	export async function load({ params }) {
-		let usr = params.user;
-		return { props: { usr } };
+		let path = params.user;
+		return { props: { path } };
 	}
 </script>
 
 <script lang="ts">
 	import Post from '../../components/Post.svelte';
+	import type { IPost } from '$lib/interfaces';
 
-	let usr: string;
+	// Path is the string that comes from the URL after the /user/ part.
+	// It is obtened from the `load` function above.
+	let path: string;
 
-	interface Iuser {
+	interface IProfile {
 		avatar: string;
 		banner: string;
 		name: string;
@@ -19,11 +22,11 @@
 		isFollowing: boolean;
 	}
 
-	export let user: Iuser = {
+	export let user: IProfile = {
 		avatar: null,
 		banner: null,
 		name: null,
-		username: usr,
+		username: path,
 		aboutMe: null,
 		isFollowing: false
 	};
