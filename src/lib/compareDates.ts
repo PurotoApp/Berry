@@ -1,4 +1,4 @@
-export function compareDates(date) {
+export function compareDates(date: number) {
 	const date1 = new Date(date).getTime();
 	const date2 = new Date().getTime();
 	const difference_ms = date2 - date1;
@@ -28,7 +28,7 @@ export function compareDates(date) {
 		if (difference_seconds > 0) {
 			return `${difference_seconds} ${difference_seconds == 1 ? 'second' : 'seconds'} ago`;
 		} else {
-			return 'IN THE FUTUUUURE';
+			return `${difference_ms} milliseconds ago`;
 		}
 	}
 }

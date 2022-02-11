@@ -28,18 +28,15 @@
 		isFollowing: false
 	};
 
-	export let posts = [
+	let posts: IPost[] = [
 		{
-			avatar: null,
-			name: null,
-			username: null,
-			content: null,
-			createdAt: null,
-			media: {
-				hasMedia: false,
-				type: null,
-				url: null
-			}
+			author: {
+				name: 'name',
+				username: 'username',
+				avatar: null
+			},
+			content: 'hello world',
+			date: new Date().getTime()
 		}
 	];
 
@@ -167,7 +164,7 @@
 		<div class="my-4 h-1 w-full rounded-lg bg-gray-2 md:hidden" />
 		<div class="md:hidden">
 			{#each posts as post}
-				<Post {...post} />
+				<Post {post} />
 			{/each}
 		</div>
 	</div>
@@ -178,6 +175,6 @@
 		class="md-hidden sticky top-3 z-10 min-h-full w-full translate-y-[-15%] bg-background py-12 md:-translate-y-1/2"
 	/>
 	{#each posts as post}
-		<Post {...post} />
+		<Post {post} />
 	{/each}
 </div>

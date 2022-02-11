@@ -1,19 +1,18 @@
 <script lang="ts">
 	import { to } from '$lib/to';
 	import { compareDates } from '$lib/compareDates';
+	import type { IPost } from '$lib/interfaces';
 
-	export let avatar: string;
-	export let name: string;
-	export let username: string;
-	export let content: string;
-	export let createdAt;
-	export let media = {
-		hasMedia: false,
-		type: null,
-		url: null
+	export let post: IPost = {
+		author: {
+			name: null,
+			username: null,
+			avatar: null
+		},
+		content: null,
+		date: null
 	};
-
-	let date = compareDates(createdAt);
+	post.date = compareDates(Number(post.date));
 </script>
 
 <div
@@ -22,27 +21,26 @@
 	<!-- Post Header -->
 	<div class="flex items-center justify-between">
 		<div class="mb-2 flex items-center">
-			{#if avatar == null}
+			{#if post.author.avatar == null}
 				<div
-					on:click={() => to(`/user/${username}`)}
+					on:click={() => to(`/user/${post.author.username}`)}
 					class="inline-block h-10 w-10 cursor-pointer select-none rounded-full bg-gray-5 bg-contain"
 				/>
 			{:else}
 				<div
-					on:click={() => to(`/user/${username}`)}
+					on:click={() => to(`/user/${post.author.username}`)}
 					class="inline-block rounded-full bg-contain bg-gray-5 w-10 h-10 cursor-pointer select-none"
-					style="background-image: url('{avatar}')"
+					style="background-image: url('{post.author.avatar}')"
 				/>
 			{/if}
 			<div class="ml-2 inline-block select-none">
 				<div class="block translate-y-1/4">
-					<div on:click={() => to(`/user/${username}`)}>
-						<span class="cursor-pointer font-semibold hover:underline">{name}</span><span
-							class="ml-2 text-base text-[#89899A]">@{username}</span
-						>
+					<div on:click={() => to(`/user/${post.author.username}`)}>
+						<span class="cursor-pointer font-semibold hover:underline">{post.author.name}</span
+						><span class="ml-2 text-base text-[#89899A]">@{post.author.username}</span>
 					</div>
 				</div>
-				<span class="select-none text-sm text-[#89899A]">{date}</span>
+				<span class="select-none text-sm text-[#89899A]">{post.date}</span>
 			</div>
 		</div>
 		<div class="mx-2 hidden h-6 w-6 text-[#89899A] transition hover:text-gray-10 group-hover:block">
@@ -61,11 +59,11 @@
 	<!-- Post Content -->
 	<div class="min-h-8 rounded-lg bg-gray-4 pb-1">
 		<div class="mx-2 mt-3 -mb-3">
-			<span>{content}</span>
-			{#if media.hasMedia}
-				{#if media.type == 'image'}
+			<span>{post.content}</span>
+			{#if post.media}
+				{#if post.media.type == 'image'}
 					<img
-						src={media.url}
+						src={post.media.url}
 						class="min-h-16 mt-2 mb-6 max-h-[32rem] w-full select-none rounded-sm object-cover"
 						loading="lazy"
 						alt="Post media"
