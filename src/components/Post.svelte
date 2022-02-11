@@ -1,6 +1,6 @@
 <script lang="ts">
-	import { to } from '../scripts/to';
-	import { compareDates } from '../scripts/compareDates';
+	import { to } from '$lib/to';
+	import { compareDates } from '$lib/compareDates';
 
 	export let avatar: string;
 	export let name: string;

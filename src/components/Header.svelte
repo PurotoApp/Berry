@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { to } from '../scripts/to';
+	import { to } from '$lib/to';
 	import Icon from './Icon.svelte';
 	import SearchBar from './SearchBar.svelte';
 
