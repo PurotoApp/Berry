@@ -14,7 +14,7 @@
 
 	let showUserMenu = false;
 	function toggleUser() {
-		showUserMenu ? (showUserMenu = false) : (showUserMenu = true);
+		showUserMenu = !showUserMenu;
 	}
 </script>
 

@@ -45,7 +45,7 @@
 
 	let showSideMenu = false;
 	function toggleMenu() {
-		showSideMenu ? (showSideMenu = false) : (showSideMenu = true);
+		showSideMenu = !showSideMenu;
 	}
 </script>
 
