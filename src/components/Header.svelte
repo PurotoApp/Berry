@@ -71,8 +71,7 @@
 							<div class="h-full w-full animate-ping rounded-full bg-red-1 text-xs" />
 						</div>
 					{/if}
-				{/if}
-				{#if !user.isLogOn}
+				{:else}
 					<div class="h-8 w-8" />
 				{/if}
 				{#if showUserMenu}
@@ -95,8 +94,7 @@
 								<div class="block w-full rounded-md py-2 text-center transition hover:bg-gray-6">
 									<a href="/settings">Settings</a>
 								</div>
-							{/if}
-							{#if !user.isLogOn}
+								{:else}
 								<div class="block w-full rounded-md py-2 text-center transition hover:bg-gray-6">
 									<a href="/login">Login</a>
 								</div>
