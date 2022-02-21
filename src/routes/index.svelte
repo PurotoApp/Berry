@@ -1,19 +1,17 @@
 <script lang="ts">
 	import Post from '../components/Post.svelte';
 	import WelcomeBack from '../components/WelcomeBack.svelte';
+	import type { IPost } from '$lib/interfaces'
 
-	let data = [
+	let posts: IPost[] = [
 		{
-			avatar: null,
-			name: null,
-			username: null,
+			author: {
+				name: null,
+				username: null,
+				avatar: null
+			},
 			content: null,
-			createdAt: null,
-			media: {
-				hasMedia: false,
-				type: null,
-				url: null
-			}
+			date: new Date().getTime()
 		}
 	];
 </script>
@@ -28,7 +26,7 @@
 	<div
 		class="md-hidden sticky top-3 z-10 min-h-full w-full translate-y-[-15%] bg-background py-12 md:-translate-y-1/2"
 	/>
-	{#each data as data}
-		<Post {...data} />
+	{#each posts as post}
+		<Post {post} />
 	{/each}
 </div>
