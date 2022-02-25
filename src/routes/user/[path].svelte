@@ -90,7 +90,7 @@
 			</div>
 		</div>
 		<!--	Desktop		-->
-		<div class="md-hidden translate-y-[15%] select-none">
+		<div class="mb:hidden translate-y-[15%] select-none">
 			<div class="absolute -top-8 left-20 h-6 w-6 text-[#89899A] transition hover:text-gray-10">
 				<svg
 					on:click={toggleMenu}
@@ -190,9 +190,9 @@
 	</div>
 </div>
 
-<div class="md-hidden relative top-24 mx-auto w-10/12">
+<div class="mb:hidden relative top-24 mx-auto w-10/12">
 	<div
-		class="md-hidden sticky top-3 z-10 min-h-full w-full translate-y-[-15%] bg-background py-12 md:-translate-y-1/2"
+		class="mb:hidden sticky top-3 z-10 min-h-full w-full translate-y-[-15%] bg-background py-12 md:-translate-y-1/2"
 	/>
 	{#each posts as post}
 		<Post {post} />

@@ -29,12 +29,12 @@
 		</div>
 
 		<!--    Search Bar     -->
-		<div class="md-hidden">
+		<div class="mb:hidden">
 			<SearchBar />
 		</div>
 
 		<!--	Right Part    -->
-		<div class="md-hidden flex h-8 w-20 flex-row justify-between md:-ml-12">
+		<div class="mb:hidden flex h-8 w-20 flex-row justify-between md:-ml-12">
 			<!--	Notification Icon	-->
 			<div on:click={() => to('/notification')} class="cursor-pointer">
 				<svg
