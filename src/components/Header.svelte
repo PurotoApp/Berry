@@ -94,7 +94,7 @@
 								<div class="block w-full rounded-md py-2 text-center transition hover:bg-gray-6">
 									<a href="/settings">Settings</a>
 								</div>
-								{:else}
+							{:else}
 								<div class="block w-full rounded-md py-2 text-center transition hover:bg-gray-6">
 									<a href="/login">Login</a>
 								</div>

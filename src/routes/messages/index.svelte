@@ -1,3 +1,3 @@
 <svelte:head>
-    <title>Puroto - Messages</title>
+	<title>Puroto - Messages</title>
 </svelte:head>

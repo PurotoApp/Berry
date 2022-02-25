@@ -54,38 +54,38 @@
 </svelte:head>
 
 {#if user.banner != null}
-<div
-	id="banner"
-	class="absolute z-20 h-[calc(100vh/4)] w-full bg-cover bg-center bg-no-repeat md:h-[calc(100vh/2)]"
-	style="background-image: url({user.banner})"
-/>
+	<div
+		id="banner"
+		class="absolute z-20 h-[calc(100vh/4)] w-full bg-cover bg-center bg-no-repeat md:h-[calc(100vh/2)]"
+		style="background-image: url({user.banner})"
+	/>
 {:else}
-<div
-	id="banner"
-	class="absolute z-20 h-[calc(100vh/4)] w-full bg-blue-1 bg-cover bg-center bg-no-repeat md:h-[calc(100vh/2)]"
-	style="background-image: url({user.banner})"
-/>
+	<div
+		id="banner"
+		class="absolute z-20 h-[calc(100vh/4)] w-full bg-blue-1 bg-cover bg-center bg-no-repeat md:h-[calc(100vh/2)]"
+		style="background-image: url({user.banner})"
+	/>
 {/if}
 <div class="relative left-1/2 z-30 w-11/12 -translate-x-1/2 md:w-10/12">
 	<div class="mt-[calc(100vw/4.5)] flex justify-between md:mt-[calc(100vw/7)]">
 		<div>
 			{#if user.avatar != null}
-			<div
-				class="inline-block h-16 w-16 select-none rounded-lg bg-contain md:h-24 md:w-24"
-				style="background-image: url('{user.avatar}')"
-			/>
+				<div
+					class="inline-block h-16 w-16 select-none rounded-lg bg-contain md:h-24 md:w-24"
+					style="background-image: url('{user.avatar}')"
+				/>
 			{:else}
-			<div
-				class="inline-block h-16 w-16 select-none rounded-lg bg-gray-5 bg-contain md:h-24 md:w-24"
-			/>
+				<div
+					class="inline-block h-16 w-16 select-none rounded-lg bg-gray-5 bg-contain md:h-24 md:w-24"
+				/>
 			{/if}
 			<div class="absolute ml-4 inline-block h-16">
 				{#if user.username != null}
-				<span class="block text-xl md:text-3xl">{user.name}</span>
-				<span class="text-md block text-gray-8 md:text-lg">@{user.username}</span>
+					<span class="block text-xl md:text-3xl">{user.name}</span>
+					<span class="text-md block text-gray-8 md:text-lg">@{user.username}</span>
 				{:else}
-				<span class="block text-xl md:text-3xl">{path}</span>
-				<span class="text-md block text-gray-8 md:text-lg">@{path}</span>
+					<span class="block text-xl md:text-3xl">{path}</span>
+					<span class="text-md block text-gray-8 md:text-lg">@{path}</span>
 				{/if}
 			</div>
 		</div>
