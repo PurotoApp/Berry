@@ -1,6 +1,6 @@
 <script context="module">
 	export async function load({ params }) {
-		let path = params.user;
+		let path = params.path;
 		return { props: { path } };
 	}
 </script>
@@ -34,11 +34,11 @@
 	let posts: IPost[] = [
 		{
 			author: {
-				name: 'name',
-				username: 'username',
+				name: null,
+				username: null,
 				avatar: null
 			},
-			content: 'hello world',
+			content: null,
 			date: new Date().getTime()
 		}
 	];
@@ -53,25 +53,44 @@
 	<title>Puroto - {user.name}</title>
 </svelte:head>
 
-<div
-	id="banner"
-	class="absolute z-20 h-[calc(100vh/4)] w-full bg-blue-1 bg-cover bg-center bg-no-repeat md:h-[calc(100vh/2)]"
-	style="background-image: url({user.banner})"
-/>
+{#if user.banner != null}
+	<div
+		id="banner"
+		class="absolute z-20 h-[calc(100vh/4)] w-full bg-cover bg-center bg-no-repeat md:h-[calc(100vh/2)]"
+		style="background-image: url({user.banner})"
+	/>
+{:else}
+	<div
+		id="banner"
+		class="absolute z-20 h-[calc(100vh/4)] w-full bg-blue-1 bg-cover bg-center bg-no-repeat md:h-[calc(100vh/2)]"
+		style="background-image: url({user.banner})"
+	/>
+{/if}
 <div class="relative left-1/2 z-30 w-11/12 -translate-x-1/2 md:w-10/12">
 	<div class="mt-[calc(100vw/4.5)] flex justify-between md:mt-[calc(100vw/7)]">
 		<div>
-			<div
-				class="inline-block h-16 w-16 select-none rounded-lg bg-gray-5 bg-contain md:h-24 md:w-24"
-				style="background-image: url('{user.avatar}')"
-			/>
+			{#if user.avatar != null}
+				<div
+					class="inline-block h-16 w-16 select-none rounded-lg bg-contain md:h-24 md:w-24"
+					style="background-image: url('{user.avatar}')"
+				/>
+			{:else}
+				<div
+					class="inline-block h-16 w-16 select-none rounded-lg bg-gray-5 bg-contain md:h-24 md:w-24"
+				/>
+			{/if}
 			<div class="absolute ml-4 inline-block h-16">
-				<span class="block text-xl md:text-3xl">{user.name}</span>
-				<span class="text-md block text-gray-8 md:text-lg">@{user.username}</span>
+				{#if user.username != null}
+					<span class="block text-xl md:text-3xl">{user.name}</span>
+					<span class="text-md block text-gray-8 md:text-lg">@{user.username}</span>
+				{:else}
+					<span class="block text-xl md:text-3xl">{path}</span>
+					<span class="text-md block text-gray-8 md:text-lg">@{path}</span>
+				{/if}
 			</div>
 		</div>
 		<!--	Desktop		-->
-		<div class="md-hidden translate-y-[15%] select-none">
+		<div class="translate-y-[15%] select-none mb:hidden">
 			<div class="absolute -top-8 left-20 h-6 w-6 text-[#89899A] transition hover:text-gray-10">
 				<svg
 					on:click={toggleMenu}
@@ -108,7 +127,7 @@
 							</div>
 						</div>
 						<div
-							class="block w-full rounded-md py-2 text-center text-red-2 transition hover:bg-gray-6"
+							class="block w-full rounded-md py-2 text-center text-scarlet-3 transition hover:bg-gray-6"
 						>
 							<div class="translate-x-2">
 								<svg
@@ -134,14 +153,13 @@
 			<button class="mb-1 block w-24 rounded-lg bg-blue-3 py-1">
 				<span class="text-lg">Message</span>
 			</button>
-			{#if !user.isFollowing}
-				<button class="mt-1 block w-24 rounded-lg bg-blue-3 py-1">
-					<span class="text-lg">Follow</span>
-				</button>
-			{/if}
 			{#if user.isFollowing}
 				<button class="mt-1 box-border block w-24 rounded-xl border-4 border-blue-3 text-blue-3">
 					<span class="text-lg font-semibold">Unfollow</span>
+				</button>
+			{:else}
+				<button class="mt-1 block w-24 rounded-lg bg-blue-3 py-1">
+					<span class="text-lg">Follow</span>
 				</button>
 			{/if}
 		</div>
@@ -153,14 +171,13 @@
 			<button class="w-[49%] rounded-lg bg-blue-3 py-2">
 				<span class="text-lg">Message</span>
 			</button>
-			{#if !user.isFollowing}
-				<button class="w-[49%] rounded-lg bg-blue-3 py-2">
-					<span class="text-lg">Follow</span>
-				</button>
-			{/if}
 			{#if user.isFollowing}
 				<button class="box-border w-[49%] rounded-lg border-4 border-blue-3 py-2">
 					<span class="text-lg font-semibold text-blue-3">Unfollow</span>
+				</button>
+			{:else}
+				<button class="w-[49%] rounded-lg bg-blue-3 py-2">
+					<span class="text-lg">Follow</span>
 				</button>
 			{/if}
 		</div>
@@ -173,9 +190,9 @@
 	</div>
 </div>
 
-<div class="md-hidden relative top-24 mx-auto  w-11/12">
+<div class="relative top-24 mx-auto w-10/12 mb:hidden">
 	<div
-		class="md-hidden sticky top-3 z-10 min-h-full w-full translate-y-[-15%] bg-background py-12 md:-translate-y-1/2"
+		class="sticky top-3 z-10 min-h-full w-full translate-y-[-15%] bg-background py-12 mb:hidden md:-translate-y-1/2"
 	/>
 	{#each posts as post}
 		<Post {post} />

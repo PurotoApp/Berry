@@ -8,13 +8,16 @@ export function compareDates(date: number) {
 	const difference_seconds = Math.floor(difference_ms / 1000);
 	if (difference_days >= 7) {
 		if (new Date(date).getFullYear() != new Date().getFullYear()) {
-			// returns DD/MM/YYYY
-			return `${new Date(date).getDate()} ${new Date(date).toLocaleString('default', {
-				month: 'short'
-			})} ${new Date(date).getFullYear()}`;
+			// returns days, months and years
+			return `${new Date(date).toLocaleDateString(undefined, {
+				day: '2-digit',
+				month: 'short',
+				year: '2-digit'
+			})}`;
 		} else {
-			// returns DD/MM
-			return `${new Date(date).getDate()} ${new Date(date).toLocaleString('default', {
+			// returns days and month
+			return `${new Date(date).toLocaleDateString(undefined, {
+				day: '2-digit',
 				month: 'short'
 			})}`;
 		}
@@ -25,10 +28,11 @@ export function compareDates(date: number) {
 	} else if (difference_minutes > 0) {
 		return `${difference_minutes} ${difference_minutes == 1 ? 'minute' : 'minutes'} ago`;
 	} else {
-		if (difference_seconds > 0) {
+		// if the post has been created 10 seconds ago
+		if (difference_seconds > 5) {
 			return `${difference_seconds} ${difference_seconds == 1 ? 'second' : 'seconds'} ago`;
 		} else {
-			return `${difference_ms} milliseconds ago`;
+			return `right now`;
 		}
 	}
 }

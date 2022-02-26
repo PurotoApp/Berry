@@ -36,23 +36,3 @@
 	background: #ffffff;
 	border-radius: 1rem;
 }
-
-@media (max-width: 768px) {
-	.mb\:bottom-0 {
-		bottom: 0px;
-	}
-
-	.md-hidden {
-		display: none;
-	}
-
-	.mb\:overflow-auto {
-		overflow: auto;
-	}
-}
-
-@media (min-width: 768px) {
-	.desk-hidden {
-		display: none;
-	}
-}
