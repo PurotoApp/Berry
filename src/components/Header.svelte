@@ -54,7 +54,7 @@
 				</svg>
 				{#if user.hasUnreadNotification}
 					<div
-						class="bg-red-3 pointer-events-none h-3 w-3 -translate-y-3 translate-x--6 rounded-full text-xs"
+						class="pointer-events-none h-3 w-3 -translate-y-3 translate-x--6 rounded-full bg-scarlet-3 text-xs"
 					>
 						<div class="h-full w-full animate-ping rounded-full bg-safety-red text-xs" />
 					</div>
@@ -66,7 +66,7 @@
 					<img draggable="false" src={user.avatar} class="h-8 w-8 rounded-full" alt={user.name} />
 					{#if user.hasUnreadMessage}
 						<div
-							class="bg-red-3 pointer-events-none h-3 w-3 -translate-y-3 translate-x-6 rounded-full text-xs"
+							class="pointer-events-none h-3 w-3 -translate-y-3 translate-x-6 rounded-full bg-scarlet-3 text-xs"
 						>
 							<div class="h-full w-full animate-ping rounded-full bg-safety-red text-xs" />
 						</div>
@@ -84,7 +84,7 @@
 								<div class="block w-full rounded-md py-2 text-center transition hover:bg-gray-6">
 									{#if user.hasUnreadMessage}
 										<div
-											class="bg-red-3 pointer-events-none absolute h-3 w-3 translate-y-2 translate-x-2 rounded-full text-xs"
+											class="pointer-events-none absolute h-3 w-3 translate-y-2 translate-x-2 rounded-full bg-scarlet-3 text-xs"
 										>
 											<div class="h-full w-full animate-ping rounded-full bg-safety-red text-xs" />
 										</div>
@@ -136,7 +136,7 @@
 				</svg>
 				{#if user.hasUnreadNotification}
 					<div
-						class="bg-red-3 pointer-events-none h-3 w-3 -translate-y-3 translate-x--6 rounded-full text-xs"
+						class="pointer-events-none h-3 w-3 -translate-y-3 translate-x--6 rounded-full bg-scarlet-3 text-xs"
 					>
 						<div class="h-full w-full animate-ping rounded-full bg-safety-red text-xs" />
 					</div>
