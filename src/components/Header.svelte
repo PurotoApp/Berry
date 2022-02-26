@@ -54,9 +54,9 @@
 				</svg>
 				{#if user.hasUnreadNotification}
 					<div
-						class="pointer-events-none h-3 w-3 -translate-y-3 translate-x--6 rounded-full bg-red-2 text-xs"
+						class="pointer-events-none h-3 w-3 -translate-y-3 translate-x--6 rounded-full bg-red-3 text-xs"
 					>
-						<div class="h-full w-full animate-ping rounded-full bg-red-1 text-xs" />
+						<div class="h-full w-full animate-ping rounded-full bg-safety-red text-xs" />
 					</div>
 				{/if}
 			</div>
@@ -66,9 +66,9 @@
 					<img draggable="false" src={user.avatar} class="h-8 w-8 rounded-full" alt={user.name} />
 					{#if user.hasUnreadMessage}
 						<div
-							class="pointer-events-none h-3 w-3 -translate-y-3 translate-x-6 rounded-full bg-red-2 text-xs"
+							class="pointer-events-none h-3 w-3 -translate-y-3 translate-x-6 rounded-full bg-red-3 text-xs"
 						>
-							<div class="h-full w-full animate-ping rounded-full bg-red-1 text-xs" />
+							<div class="h-full w-full animate-ping rounded-full bg-safety-red text-xs" />
 						</div>
 					{/if}
 				{:else}
@@ -84,9 +84,9 @@
 								<div class="block w-full rounded-md py-2 text-center transition hover:bg-gray-6">
 									{#if user.hasUnreadMessage}
 										<div
-											class="pointer-events-none absolute h-3 w-3 translate-y-2 translate-x-2 rounded-full bg-red-2 text-xs"
+											class="pointer-events-none absolute h-3 w-3 translate-y-2 translate-x-2 rounded-full bg-red-3 text-xs"
 										>
-											<div class="h-full w-full animate-ping rounded-full bg-red-1 text-xs" />
+											<div class="h-full w-full animate-ping rounded-full bg-safety-red text-xs" />
 										</div>
 									{/if}
 									<a href="/messages">Messages</a>
@@ -136,9 +136,9 @@
 				</svg>
 				{#if user.hasUnreadNotification}
 					<div
-						class="pointer-events-none h-3 w-3 -translate-y-3 translate-x--6 rounded-full bg-red-2 text-xs"
+						class="pointer-events-none h-3 w-3 -translate-y-3 translate-x--6 rounded-full bg-red-3 text-xs"
 					>
-						<div class="h-full w-full animate-ping rounded-full bg-red-1 text-xs" />
+						<div class="h-full w-full animate-ping rounded-full bg-safety-red text-xs" />
 					</div>
 				{/if}
 			</div>

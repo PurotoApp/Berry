@@ -94,7 +94,7 @@
 			<div class="mx-2 h-6 w-6">
 				<svg
 					xmlns="http://www.w3.org/2000/svg"
-					class="transition hover:stroke-red-2"
+					class="transition hover:stroke-red-3"
 					fill="none"
 					viewBox="0 0 24 24"
 					stroke="currentColor"

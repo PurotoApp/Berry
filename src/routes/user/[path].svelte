@@ -127,7 +127,7 @@
 							</div>
 						</div>
 						<div
-							class="block w-full rounded-md py-2 text-center text-red-2 transition hover:bg-gray-6"
+							class="block w-full rounded-md py-2 text-center text-red-3 transition hover:bg-gray-6"
 						>
 							<div class="translate-x-2">
 								<svg
