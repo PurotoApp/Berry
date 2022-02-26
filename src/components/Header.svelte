@@ -20,7 +20,7 @@
 
 <header class="min-w-64 mb:bottom-0 fixed z-50 w-full md:top-0 md:mt-6">
 	<div
-		class="desk-hidden absolute min-h-full w-full translate-y-[-10%] bg-gray-1 py-12 md:-translate-y-1/2"
+		class="md:hidden absolute min-h-full w-full translate-y-[-10%] bg-gray-1 py-12 md:-translate-y-1/2"
 	/>
 	<div class="relative mx-auto mb-2 flex w-10/12 flex-nowrap justify-between md:mb-0">
 		<!--    Puroto Icon     -->
@@ -110,7 +110,7 @@
 
 		<div
 			on:click={() => to(`/user/${user.username}`)}
-			class="desk-hidden h-8 w-8 rounded-full bg-gray-5"
+			class="md:hidden h-8 w-8 rounded-full bg-gray-5"
 		>
 			{#if user.isLogOn}
 				<img draggable="false" src={user.avatar} class="h-8 w-8 rounded-full" alt={user.name} />
@@ -118,7 +118,7 @@
 		</div>
 
 		{#if user.isLogOn}
-			<div on:click={() => to('notification')} class="desk-hidden cursor-pointer">
+			<div on:click={() => to('notification')} class="md:hidden cursor-pointer">
 				<svg
 					width="32"
 					height="32"
