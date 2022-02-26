@@ -24,7 +24,7 @@
 
 <div class="relative mx-auto w-10/12">
 	<div
-		class="mb:hidden sticky top-3 z-10 min-h-full w-full translate-y-[-15%] bg-background py-12 md:-translate-y-1/2"
+		class="sticky top-3 z-10 min-h-full w-full translate-y-[-15%] bg-background py-12 mb:hidden md:-translate-y-1/2"
 	/>
 	{#each posts as post}
 		<Post {post} />

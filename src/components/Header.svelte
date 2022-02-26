@@ -18,9 +18,9 @@
 	}
 </script>
 
-<header class="min-w-64 mb:bottom-0 fixed z-50 w-full md:top-0 md:mt-6">
+<header class="min-w-64 fixed z-50 w-full mb:bottom-0 md:top-0 md:mt-6">
 	<div
-		class="md:hidden absolute min-h-full w-full translate-y-[-10%] bg-gray-1 py-12 md:-translate-y-1/2"
+		class="absolute min-h-full w-full translate-y-[-10%] bg-gray-1 py-12 md:hidden md:-translate-y-1/2"
 	/>
 	<div class="relative mx-auto mb-2 flex w-10/12 flex-nowrap justify-between md:mb-0">
 		<!--    Puroto Icon     -->
@@ -34,7 +34,7 @@
 		</div>
 
 		<!--	Right Part    -->
-		<div class="mb:hidden flex h-8 w-20 flex-row justify-between md:-ml-12">
+		<div class="flex h-8 w-20 flex-row justify-between mb:hidden md:-ml-12">
 			<!--	Notification Icon	-->
 			<div on:click={() => to('/notification')} class="cursor-pointer">
 				<svg
@@ -54,7 +54,7 @@
 				</svg>
 				{#if user.hasUnreadNotification}
 					<div
-						class="pointer-events-none h-3 w-3 -translate-y-3 translate-x--6 rounded-full bg-red-3 text-xs"
+						class="bg-red-3 pointer-events-none h-3 w-3 -translate-y-3 translate-x--6 rounded-full text-xs"
 					>
 						<div class="h-full w-full animate-ping rounded-full bg-safety-red text-xs" />
 					</div>
@@ -66,7 +66,7 @@
 					<img draggable="false" src={user.avatar} class="h-8 w-8 rounded-full" alt={user.name} />
 					{#if user.hasUnreadMessage}
 						<div
-							class="pointer-events-none h-3 w-3 -translate-y-3 translate-x-6 rounded-full bg-red-3 text-xs"
+							class="bg-red-3 pointer-events-none h-3 w-3 -translate-y-3 translate-x-6 rounded-full text-xs"
 						>
 							<div class="h-full w-full animate-ping rounded-full bg-safety-red text-xs" />
 						</div>
@@ -84,7 +84,7 @@
 								<div class="block w-full rounded-md py-2 text-center transition hover:bg-gray-6">
 									{#if user.hasUnreadMessage}
 										<div
-											class="pointer-events-none absolute h-3 w-3 translate-y-2 translate-x-2 rounded-full bg-red-3 text-xs"
+											class="bg-red-3 pointer-events-none absolute h-3 w-3 translate-y-2 translate-x-2 rounded-full text-xs"
 										>
 											<div class="h-full w-full animate-ping rounded-full bg-safety-red text-xs" />
 										</div>
@@ -110,7 +110,7 @@
 
 		<div
 			on:click={() => to(`/user/${user.username}`)}
-			class="md:hidden h-8 w-8 rounded-full bg-gray-5"
+			class="h-8 w-8 rounded-full bg-gray-5 md:hidden"
 		>
 			{#if user.isLogOn}
 				<img draggable="false" src={user.avatar} class="h-8 w-8 rounded-full" alt={user.name} />
@@ -118,7 +118,7 @@
 		</div>
 
 		{#if user.isLogOn}
-			<div on:click={() => to('notification')} class="md:hidden cursor-pointer">
+			<div on:click={() => to('notification')} class="cursor-pointer md:hidden">
 				<svg
 					width="32"
 					height="32"
@@ -136,7 +136,7 @@
 				</svg>
 				{#if user.hasUnreadNotification}
 					<div
-						class="pointer-events-none h-3 w-3 -translate-y-3 translate-x--6 rounded-full bg-red-3 text-xs"
+						class="bg-red-3 pointer-events-none h-3 w-3 -translate-y-3 translate-x--6 rounded-full text-xs"
 					>
 						<div class="h-full w-full animate-ping rounded-full bg-safety-red text-xs" />
 					</div>

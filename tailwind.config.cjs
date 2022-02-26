@@ -72,7 +72,7 @@ module.exports = {
 				4: '#EE7289',
 				5: '#F18EA0',
 				6: '#F5ADBA',
-				7: '#EBC6CD',
+				7: '#EBC6CD'
 			},
 
 			scarlet: {
