@@ -1,3 +1,3 @@
 <svelte:head>
-    <title>Puroto - Notifications</title>
+	<title>Puroto - Notifications</title>
 </svelte:head>
