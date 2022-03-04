@@ -20,6 +20,8 @@ module.exports = {
 			black: '#000',
 			white: '#fff',
 
+			backgroundDark: '#18171C',
+
 			background: '#222027',
 
 			gray: {
