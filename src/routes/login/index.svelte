@@ -8,6 +8,10 @@
 			showPassword = 'text';
 		}
 	}
+
+	function login() {
+		// TODO
+	}
 </script>
 
 <svelte:head>
@@ -27,7 +31,7 @@
 		<div>
 			<div class="flex w-full justify-center">
 				<div class="w-80 rounded-lg bg-gray-4 px-3 py-3">
-					<form class="bg-mint- flex justify-center">
+					<form on:submit|preventDefault={login} class="bg-mint- flex justify-center">
 						<div>
 							<!--	Email	-->
 							<label>
