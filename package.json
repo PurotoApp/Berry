@@ -13,9 +13,9 @@
 		"@sveltejs/adapter-node": "1.0.0-next.73",
 		"@sveltejs/kit": "1.0.0-next.305",
 		"@typescript-eslint/eslint-plugin": "^5.21.0",
-		"@typescript-eslint/parser": "^5.10.2",
+		"@typescript-eslint/parser": "^5.21.0",
 		"autoprefixer": "^10.4.2",
-		"eslint": "^8.8.0",
+		"eslint": "^8.14.0",
 		"eslint-config-prettier": "^8.3.0",
 		"eslint-plugin-svelte3": "^3.4.0",
 		"prettier": "^2.6.2",
@@ -23,8 +23,8 @@
 		"prettier-plugin-tailwindcss": "^0.1.10",
 		"svelte": "^3.48.0",
 		"svelte-preprocess": "^4.10.6",
-		"tailwindcss": "^3.0.18",
-		"tslib": "^2.3.1",
+		"tailwindcss": "^3.0.24",
+		"tslib": "^2.4.0",
 		"typescript": "^4.5.5"
 	}
 }
