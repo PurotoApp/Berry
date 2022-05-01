@@ -14,7 +14,7 @@
 		"@sveltejs/kit": "1.0.0-next.305",
 		"@typescript-eslint/eslint-plugin": "^5.21.0",
 		"@typescript-eslint/parser": "^5.21.0",
-		"autoprefixer": "^10.4.2",
+		"autoprefixer": "^10.4.5",
 		"eslint": "^8.14.0",
 		"eslint-config-prettier": "^8.3.0",
 		"eslint-plugin-svelte3": "^3.4.0",
