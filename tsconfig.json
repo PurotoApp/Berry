@@ -2,7 +2,7 @@
 	"compilerOptions": {
 		"moduleResolution": "node",
 		"module": "esnext",
-		"lib": ["esnext", "DOM"],
+		"lib": ["esnext", "DOM", "DOM.Iterable"],
 		"target": "esnext",
 		/**
 			svelte-preprocess cannot figure out whether you have a value or a type, so tell TypeScript
