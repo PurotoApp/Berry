@@ -1,4 +1,7 @@
 <script lang="ts">
+	import { signup } from '$lib/auth';
+	import { formToData } from '$lib/formToData';
+
 	let showPassword = 'password';
 
 	function toggleShowPassword(bool: boolean) {
@@ -7,6 +10,20 @@
 		} else {
 			showPassword = 'text';
 		}
+	}
+
+	function join(data) {
+		data = formToData(data);
+
+		signup({
+			name: data.name,
+			user_name: data.username,
+			email: data.email,
+			password: data.password
+		})
+		.then(result => {
+			console.log(result);
+		});
 	}
 </script>
 
@@ -28,24 +45,27 @@
 		<div>
 			<div class="flex w-full justify-center">
 				<div class="w-80 rounded-lg bg-gray-4 px-3 py-3">
-					<form class="bg-mint- flex justify-center">
+					<form class="bg-mint- flex justify-center" method="post" autocomplete="off" on:submit|preventDefault={join}>
 						<div>
 							<!--	Name	-->
 							<div>
 								<label>
 									<span class="ml-1 select-none text-gray-10"> Name: </span>
 									<input
-										type="email"
+										name="name"
+										type="text"
 										class="w-full rounded-lg bg-gray-5 p-2 transition hover:bg-gray-6 focus:outline-none active:bg-gray-5"
 									/>
 								</label>
 							</div>
+
 							<!--	Username	-->
 							<div class="mt-4">
 								<label>
 									<span class="ml-1 select-none text-gray-10"> Username: </span>
 									<input
-										type="email"
+										name="username"
+										type="text"
 										class="w-full rounded-lg bg-gray-5 p-2 transition hover:bg-gray-6 focus:outline-none active:bg-gray-5"
 									/>
 								</label>
@@ -56,12 +76,14 @@
 								<label>
 									<span class="ml-1 select-none text-gray-10"> Email: </span>
 									<input
+										name="email"
 										type="email"
 										class="w-full rounded-lg bg-gray-5 p-2 transition hover:bg-gray-6 focus:outline-none active:bg-gray-5"
 										placeholder="abc@xyz.com"
 									/>
 								</label>
 							</div>
+
 							<!--	Password	-->
 							<div class="mt-4">
 								<label>
@@ -114,6 +136,7 @@
 										</div>
 									{/if}
 									<input
+										name="password"
 										type={showPassword}
 										class="w-full rounded-lg bg-gray-5 p-2 transition hover:bg-gray-6 focus:outline-none active:bg-gray-5"
 									/>

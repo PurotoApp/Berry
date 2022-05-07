@@ -1,4 +1,7 @@
 <script lang="ts">
+	import { signin } from '$lib/auth';
+	import { formToData } from '$lib/formToData';
+	
 	let showPassword = 'password';
 
 	function toggleShowPassword(bool: boolean) {
@@ -9,8 +12,16 @@
 		}
 	}
 
-	function login() {
-		// TODO
+	function login(data) {
+		data = formToData(data);
+
+		signin({
+			login: data.login,
+			password: data.password
+		})
+		.then(result => {
+			console.log(result);
+		});
 	}
 </script>
 
@@ -31,12 +42,13 @@
 		<div>
 			<div class="flex w-full justify-center">
 				<div class="w-80 rounded-lg bg-gray-4 px-3 py-3">
-					<form on:submit|preventDefault={login} class="bg-mint- flex justify-center">
+					<form method="post" autocomplete="off" on:submit|preventDefault={login} class="bg-mint- flex justify-center">
 						<div>
-							<!--	Email	-->
+							<!--	Email or username	-->
 							<label>
-								<span class="ml-1 select-none text-gray-10"> Email: </span>
+								<span class="ml-1 select-none text-gray-10"> Email or username: </span>
 								<input
+									name="login"
 									type="email"
 									class="w-full rounded-lg bg-gray-5 p-2 transition hover:bg-gray-6 focus:outline-none active:bg-gray-5"
 									placeholder="abc@xyz.com"
@@ -95,6 +107,7 @@
 										</div>
 									{/if}
 									<input
+										name="password"
 										type={showPassword}
 										class="w-full rounded-lg bg-gray-5 p-2 transition hover:bg-gray-6 focus:outline-none active:bg-gray-5"
 									/>
