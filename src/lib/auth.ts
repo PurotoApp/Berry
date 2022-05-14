@@ -1,4 +1,4 @@
-const URL = "http://localhost:3622/v1/user";
+const URL = "http://localhost:3623/v1/user";
 
 /**
  *  @param data {
@@ -15,8 +15,19 @@ export async function signup(data) {
         },
         body: JSON.stringify(data)
     });
+    
+    if(response.status == 202) {
+        const json = await response.json();
 
-    return await response.json();
+        return {
+            "status": "ok",
+            "data": json
+        }
+    }else{
+        return {
+            "status": "error"
+        }
+    }
 }
 
 /**
@@ -36,7 +47,15 @@ export async function updatePassword(data) {
         body: JSON.stringify(data)
     });
 
-    return await response.json();
+    if(response.status == 202) {
+        return {
+            "status": "ok"
+        }
+    }else{
+        return {
+            "status": "error"
+        }
+    }
 }
 
 /**
@@ -54,7 +73,18 @@ export async function signin(data) {
         body: JSON.stringify(data)
     });
 
-    return await response.json();
+    if(response.status == 202) {
+        const json = await response.json();
+
+        return {
+            "status": "ok",
+            "data": json
+        }
+    }else{
+        return {
+            "status": "error"
+        }
+    }
 }
 
 /**
@@ -73,7 +103,15 @@ export async function verify(data) {
         body: JSON.stringify(data)
     });
 
-    return await response.json();
+    if(response.status == 202) {
+        return {
+            "status": "ok"
+        }
+    }else{
+        return {
+            "status": "error"
+        }
+    }
 }
 
 /**
@@ -91,5 +129,13 @@ export async function validate(data) {
         body: JSON.stringify(data)
     });
 
-    return await response.json();
+    if(response.status == 202) {
+        return {
+            "status": "ok"
+        }
+    }else{
+        return {
+            "status": "error"
+        }
+    }
 }

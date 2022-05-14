@@ -16,7 +16,7 @@
 		data = formToData(data);
 
 		signup({
-			name: data.name,
+			//name: data.name,
 			user_name: data.username,
 			email: data.email,
 			password: data.password
