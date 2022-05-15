@@ -1,4 +1,4 @@
-FROM registry.access.redhat.com/ubi8/nodejs-16-minimal:1-39
+FROM registry.access.redhat.com/ubi8/nodejs-16-minimal:1-43
 COPY --chown=1001:1001 ./ .
 RUN npm i \
     && npm run build
