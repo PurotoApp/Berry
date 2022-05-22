@@ -19,7 +19,7 @@
 	</div>
 {:else}
 	<Header />
-	<main class="mb:overflow-auto absolute h-[calc(100vh-3.1rem)] w-full min-w-max md:h-full">
+	<main class="absolute h-[calc(100vh-3.1rem)] w-full min-w-max mb:overflow-auto md:h-full">
 		<slot />
 	</main>
 {/if}
