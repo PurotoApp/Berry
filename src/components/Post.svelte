@@ -29,7 +29,7 @@
 			{:else}
 				<div
 					on:click={() => to(`/user/${post.author.username}`)}
-					class="inline-block rounded-full bg-contain bg-gray-5 w-10 h-10 cursor-pointer select-none"
+					class="inline-block h-10 w-10 cursor-pointer select-none rounded-full bg-gray-5 bg-contain"
 					style="background-image: url('{post.author.avatar}')"
 				/>
 			{/if}
